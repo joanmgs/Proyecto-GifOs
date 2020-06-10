@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Metas -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Joan González">
+    <meta name="description" content="This page is for search gifs, save favorites and make your own gifs">
+
+    <!-- Links -->
+    <link rel="stylesheet" href="./styles/styles.css"/>
+    <link rel="stylesheet" href="search.html"/>
+    <link rel="stylesheet" href="favorite.html"/>
+    <link rel="stylesheet" href="video.html"/>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&display=swap" rel="stylesheet"/>
+
+    <title>GifOs</title>
+</head>
+<body>
+    <header>
+        <div class="visit-counter">
+            ¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número de visitas: <span>12.765.803</span>
+        </div>
+        <section>
+            <img class="logo" src="./assets/gifOF_logo.png" alt="logo con el texto gif.os"/>
+            <div>
+                <button class="create-gif">Crear Guifos</button>
+                <!-- El botón elegir tema, podría tener en el css un ::after para el diseño del botón extra
+                También podría crearse un section que contenga el button y un div  -->
+                <button class="choose-theme">Elegir Tema</button> 
+                <span>
+                    Mis Guifos
+                </span>
+            </div>            
+        </section>
+    </header>
+    <nav class="buscador">
+        <header>Buscar</header>
+        <section>
+            <input type="text" placeholder="Busca gifs, hashtags, temas, busca lo que quieras…"/>
+            <!-- Poner un ::before con la lupa en el button Buscar -->
+            <button>Buscar</button>
+        </section>
+        <!-- La seccion siguiente va a estar escondida y funcionará como el menú hamburguesa -->
+        <section>
+            <button>Resultado de búsqueda sugerido</button>
+            <button>Un resultado similar de búsqueda</button>
+            <button>Y otro más</button>
+        </section>
+    </nav>
+    <summary>
+        <header>Hoy te sugerimos:</header>
+        <figure>
+            <img src="#" alt="Primera sugerencia" class="suggestion1"/>
+            <img src="#" alt="Segunda sugerencia" class="suggestion2"/>
+            <img src="#" alt="Tercera sugerencia" class="suggestion3"/>
+            <img src="#" alt="Cuarta sugerencia" class="suggestion4"/>
+        </figure>
+    </summary>
+    <section>
+        <header>Tendencias:</header>
+        <figure>
+            <img src="#" alt="Tendencia 1" class="gif1"/>
+            <img src="#" alt="Tendencia 2" class="gif2"/>
+            <img src="#" alt="Tendencia 3" class="gif3"/>
+            <img src="#" alt="Tendencia 4" class="gif4"/>
+            <img src="#" alt="Tendencia 5" class="gif5"/>
+            <img src="#" alt="Tendencia 6" class="gif6"/>
+            <img src="#" alt="Tendencia 7" class="gif7"/>
+            <img src="#" alt="Tendencia 8" class="gif8"/>
+            <img src="#" alt="Tendencia 9" class="gif9"/>
+            <img src="#" alt="Tendencia 10" class="gif10"/>
+        </figure>
+    </section>
+
+
+    <!-- Javascript -->
+    <script src="./scripts/search.js"></script>
+    <script src="./scripts/videos.js"></script>
+</body>
+</html>
