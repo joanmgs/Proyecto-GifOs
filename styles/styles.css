@@ -2,6 +2,14 @@
   border: 0;
   margin: 0;
   padding: 0;
-  background-color: green;
+}
+
+.button {
+  width: 144px;
+  height: 36px;
+  background-color: #F7C9F3;
+  border: 1px solid #110038;
+  -webkit-box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+          box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
 }
 /*# sourceMappingURL=styles.css.map */
