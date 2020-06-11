@@ -9,9 +9,10 @@
 
     <!-- Links -->
     <link rel="stylesheet" href="./styles/styles.css"/>
+    <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="search.html"/>
     <link rel="stylesheet" href="favorite.html"/>
-    <link rel="stylesheet" href="video.html"/>
+    <link rel="stylesheet" href="create-gif.html"/>
     
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&display=swap" rel="stylesheet"/>
@@ -23,22 +24,31 @@
         <div class="visit-counter">
             ¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número de visitas: <span>12.765.803</span>
         </div>
-        <section>
+        <section class="gifos-box">
             <img class="logo" src="./assets/gifOF_logo.png" alt="logo con el texto gif.os"/>
-            <div>
-                <button type="button" class="create-gif button-header">Crear Guifos</button>
+            <div class="container-top-button">
+                <button type="button" class="create-gif button-header"><a href="./create-gif.html">Crear Guifos</a></button>
                 <!-- El botón elegir tema, podría tener en el css un ::after para el diseño del botón extra
                 También podría crearse un section que contenga el button y un div  -->
                 <div class="choose-theme-container">
                     <!-- Es posible que aquí haya dos botones mas ocultos -->
                     <button type="button" class="choose-theme button-header">Elegir Tema</button> 
-                    <button type="button" class="button-header dropdown">
-                        <img src="./assets/dropdown.svg" alt="flecha habia abajo"/>
-                    </button>
+                    <input type="checkbox" name="theme" id="theme" class="theme">
+                    <label for="theme">
+                        <div class="button-header dropdown">
+                            <img src="./assets/dropdown.svg" alt="flecha habia abajo"/>
+                        </div>
+                    </label>
+                    
+                    <section class="menu-themes">
+                        <a href="#"><span>Sailor Day</span></a>
+                        <a href="#"><span>Sailor Night</span></a>
+                    </section>
                 </div>
-                <span>
-                    Mis Guifos
-                </span>
+                <div class="mis-guifos">
+                    <a href="./favorite.html">Mis Guifos</a>
+                    <a class="a-test"></a>
+                </div>
             </div>            
         </section>
     </header>
@@ -47,7 +57,10 @@
         <section>
             <input type="text" placeholder="Busca gifs, hashtags, temas, busca lo que quieras…"/>
             <!-- Poner un ::before con la lupa en el button Buscar -->
-            <button type="button" class="search-button"><img src="./assets/lupa_inactive.svg" alt="Lupa">Buscar</button>
+            <button type="button" class="search-button">
+                <img src="./assets/lupa_inactive.svg" alt="Lupa"/>
+                Buscar
+            </button>
         </section>
         <!-- La seccion siguiente va a estar escondida y funcionará como el menú hamburguesa -->
         <section>
