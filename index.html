@@ -26,10 +26,16 @@
         <section>
             <img class="logo" src="./assets/gifOF_logo.png" alt="logo con el texto gif.os"/>
             <div>
-                <button type="button" class="create-gif button">Crear Guifos</button>
+                <button type="button" class="create-gif button-header">Crear Guifos</button>
                 <!-- El botón elegir tema, podría tener en el css un ::after para el diseño del botón extra
                 También podría crearse un section que contenga el button y un div  -->
-                <button type="button" class="choose-theme">Elegir Tema</button> 
+                <div class="choose-theme-container">
+                    <!-- Es posible que aquí haya dos botones mas ocultos -->
+                    <button type="button" class="choose-theme button-header">Elegir Tema</button> 
+                    <button type="button" class="button-header dropdown">
+                        <img src="./assets/dropdown.svg" alt="flecha habia abajo"/>
+                    </button>
+                </div>
                 <span>
                     Mis Guifos
                 </span>
@@ -41,7 +47,7 @@
         <section>
             <input type="text" placeholder="Busca gifs, hashtags, temas, busca lo que quieras…"/>
             <!-- Poner un ::before con la lupa en el button Buscar -->
-            <button type="button">Buscar</button>
+            <button type="button" class="search-button"><img src="./assets/lupa_inactive.svg" alt="Lupa">Buscar</button>
         </section>
         <!-- La seccion siguiente va a estar escondida y funcionará como el menú hamburguesa -->
         <section>
