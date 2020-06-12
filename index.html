@@ -21,29 +21,38 @@
 </head>
 <body>
     <header>
-        <div class="visit-counter">
-            ¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número de visitas: <span>12.765.803</span>
+        
+        <div class="top-main-bar">
+            <p>¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número de visitas: <span>12.765.803</span></p>
         </div>
+
         <section class="gifos-box">
             <img class="logo" src="./assets/gifOF_logo.png" alt="logo con el texto gif.os"/>
+
             <div class="container-top-button">
-                <button type="button" class="create-gif button-header"><a href="./create-gif.html">Crear Guifos</a></button>
-                <!-- El botón elegir tema, podría tener en el css un ::after para el diseño del botón extra
-                También podría crearse un section que contenga el button y un div  -->
+                <button type="button" class="create-gif button">
+                    <a href="./create-gif.html">Crear Guifos</a>
+                </button>
+
                 <div class="choose-theme-container">
-                    <!-- Es posible que aquí haya dos botones mas ocultos -->
-                    <button type="button" class="choose-theme button-header">Elegir Tema</button> 
-                    <input type="checkbox" name="theme" id="theme" class="theme">
-                    <label for="theme">
-                        <div class="button-header dropdown">
-                            <img src="./assets/dropdown.svg" alt="flecha habia abajo"/>
-                        </div>
-                    </label>
                     
-                    <section class="menu-themes">
-                        <a href="#"><span>Sailor Day</span></a>
-                        <a href="#"><span>Sailor Night</span></a>
+                    <section class="choose-theme-button">
+                        <div class="choose-theme button">Elegir Tema</div> 
+
+                        <input type="checkbox" name="theme" id="theme" class="theme">
+                        <label for="theme">
+                            <div class="dropdown-button button">
+                                <img src="./assets/dropdown.svg" alt="flecha habia abajo"/>
+                            </div>
+                        </label>
+
+                        <section class="menu-themes">
+                            <a href="#"><span>Sailor Day</span></a>
+                            <a href="#"><span>Sailor Night</span></a>
+                        </section>
                     </section>
+                    
+                    
                 </div>
                 <div class="mis-guifos">
                     <a href="./favorite.html">Mis Guifos</a>
@@ -51,6 +60,7 @@
                 </div>
             </div>            
         </section>
+
     </header>
     <nav class="buscador">
         <header>Buscar</header>

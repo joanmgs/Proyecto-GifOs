@@ -1,9 +1,4 @@
-.container-top-button
-    width: 422px
-    display: flex
-    
-.button-header
-    width: 144px
+.button
     height: 36px
     background-color: #F7C9F3
     border: 1px solid #110038
@@ -15,45 +10,33 @@
     line-height: 18px
 
 .create-gif
+    width: 144px
     margin-right: 16px
     a
-        &:hover
-            padding: 3px 13px
-            border: 1px dotted #110038
-            background: #E6BBE2
         text-decoration: none
-        &:active
+        
+        &:active, &:visited
             color: #110038
-        &:visited
-            color: #110038
-
-.container-top-button
-    margin-right: 9.8%
-
-.choose-theme-container
-    display: flex
-    flex-direction: columns
-    margin-right: 16.5px
 
 .choose-theme
     width: 131px
-
-.dropdown
-    width: 36px
-    height: 34px
     display: flex
     align-items: center
     justify-content: center
 
 .theme
     display: none
-    &:checked ~ .menu-themes
-        top: 100px
-        visibility: visible
+    // &:checked + .menu-themes
+    //     visibility: visible
+
+.dropdown-button
+    width: 36px
+    display: flex
+    align-items: center
+    justify-content: center
 
 .menu-themes
-    position: absolute
-    visibility: hidden
+    // visibility: hidden
     width: 170px
     height: 102px
     display: flex
@@ -83,30 +66,24 @@
             margin-left: 16px
 
 .mis-guifos
-    width: 95px
-    height: 32px
+    width: 76px
+    height: 18x
     box-sizing: border-box
     display: flex
     flex-direction: column
     justify-content: center
-    
     a
         text-decoration: none
         font-size: 16px
         color: #110038
         letter-spacing: 0
         line-height: 18px
-        &:nth-child(1)
-            margin-top: 5px
-            
-    
     .a-test
         width: 8px
         height: 2px
-        background: #110038
-
+        background-color: #110038
     &:hover
-        border: 1px dotted #110038
+        outline: 1px dotted #110038
         &:active
             opacity: 0.5
 
