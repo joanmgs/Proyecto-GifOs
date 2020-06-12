@@ -49,12 +49,9 @@ body {
           justify-content: center;
 }
 
-.theme {
-  display: none;
-}
-
 .dropdown-button {
   width: 36px;
+  margin-right: 16.5px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -66,12 +63,23 @@ body {
           justify-content: center;
 }
 
-.menu-themes {
-  width: 170px;
-  height: 102px;
+.theme {
+  display: none;
+}
+
+.theme:checked ~ .menu-themes {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.menu-themes {
+  position: absolute;
+  top: 102px;
+  right: 218px;
+  display: none;
+  width: 170px;
+  height: 102px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;

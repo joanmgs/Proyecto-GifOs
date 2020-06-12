@@ -24,22 +24,25 @@
     align-items: center
     justify-content: center
 
-.theme
-    display: none
-    // &:checked + .menu-themes
-    //     visibility: visible
-
 .dropdown-button
     width: 36px
+    margin-right: 16.5px
     display: flex
     align-items: center
     justify-content: center
 
+.theme
+    display: none
+    &:checked ~ .menu-themes
+        display: flex
+
 .menu-themes
-    // visibility: hidden
+    position: absolute
+    top: 102px
+    right: 218px
+    display: none
     width: 170px
     height: 102px
-    display: flex
     flex-direction: column
     justify-content: center
     align-items: center
