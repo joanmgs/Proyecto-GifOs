@@ -7,7 +7,15 @@
 }
 
 body {
+  width: 100vw;
+}
+
+.sailor-day {
   background: #fff6fe;
+}
+
+.sailor-night {
+  background: #110038;
 }
 
 .button {
@@ -26,10 +34,20 @@ body {
 .create-gif {
   width: 144px;
   margin-right: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .create-gif a {
   text-decoration: none;
+  color: #110038;
 }
 
 .create-gif a:active, .create-gif a:visited {
@@ -63,71 +81,58 @@ body {
           justify-content: center;
 }
 
-.theme {
-  display: none;
-}
-
-.theme:checked ~ .menu-themes {
+.button-theme {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
 .menu-themes {
-  position: absolute;
-  top: 102px;
-  right: 218px;
-  display: none;
   width: 170px;
   height: 102px;
+  display: none;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   background: #E6E6E6;
   -webkit-box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
           box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+  z-index: 1;
 }
 
-.menu-themes a {
-  width: 150px;
-  height: 36px;
+.menu-themes div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: left;
-      -ms-flex-pack: left;
-          justify-content: left;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  text-decoration: none;
-  color: #110038;
+  width: 150px;
+  height: 36px;
+  margin-left: 10px;
+  margin-top: 10px;
 }
 
-.menu-themes a:nth-child(1) {
+.menu-themes div p {
+  color: #110038;
+  font-size: 16px;
+  margin-left: 16px;
+}
+
+.menu-themes div:nth-child(1) {
   background: #FFF4FD;
   border: 1px solid #CCA6C9;
   -webkit-box-shadow: inset -1px -1px 0 0 #E6DCE4, inset 1px 1px 0 0 #FFFFFF;
           box-shadow: inset -1px -1px 0 0 #E6DCE4, inset 1px 1px 0 0 #FFFFFF;
-  margin-bottom: 10px;
 }
 
-.menu-themes a:nth-child(2) {
+.menu-themes div:nth-child(2) {
   background: #F0F0F0;
   border: 1px solid #808080;
   -webkit-box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
           box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
-}
-
-.menu-themes a span {
-  margin-left: 16px;
+  margin-bottom: 10px;
 }
 
 .mis-guifos {
@@ -178,6 +183,8 @@ body {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+  margin-right: 18px;
+  margin-left: 8px;
   background-color: #E6E6E6;
   border: 1px solid #808080;
   -webkit-box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
@@ -214,6 +221,11 @@ body {
           justify-content: center;
 }
 
+.header {
+  width: 100%;
+  height: 142px;
+}
+
 .gifos-box {
   width: 100%;
   height: 118px;
@@ -242,18 +254,28 @@ body {
   margin-right: 9.8%;
 }
 
-.choose-theme-container {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: columns;
-          flex-direction: columns;
-  margin-right: 16.5px;
-}
-
 .choose-theme-button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.buscador {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 163px;
 }
 
 .top-main-bar {
@@ -276,5 +298,99 @@ body {
 
 .top-main-bar p {
   margin-left: 8px;
+}
+
+.container-top-main-bar {
+  width: 1200px;
+  height: 99px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: #E6E6E6;
+  -webkit-box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+          box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+}
+
+.container-top-main-bar .container-searcher {
+  height: 72px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.search-bar {
+  width: 99.2%;
+  height: 24px;
+  margin: 3px 3px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.search-bar p {
+  margin-left: 3px;
+}
+
+.search {
+  width: 1057px;
+  height: 48px;
+  margin-left: 15px;
+  padding-left: 16px;
+  background: #FFFFFF;
+  border: 1px solid #979797;
+  -webkit-box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+          box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+}
+
+.menu-input {
+  display: none;
+  width: 1200px;
+  height: 160px;
+  position: absolute;
+  top: 241px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: #E6E6E6;
+  -webkit-box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+          box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+}
+
+.menu-input div {
+  width: 1057px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 15px;
+  margin-top: 10px;
+  padding: 6px 0px 6px 16px;
+  font-size: 16px;
+  color: #110038;
+  letter-spacing: 0;
+  line-height: 22px;
+  background: #F0F0F0;
+  border: 1px solid #808080;
+  -webkit-box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
+          box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
+}
+
+.menu-input div:nth-child(1) {
+  margin-top: 16px;
 }
 /*# sourceMappingURL=styles.css.map */

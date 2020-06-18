@@ -12,9 +12,12 @@
 .create-gif
     width: 144px
     margin-right: 16px
+    display: flex
+    align-items: center
+    justify-content: center
     a
         text-decoration: none
-        
+        color: #110038
         &:active, &:visited
             color: #110038
 
@@ -31,42 +34,37 @@
     align-items: center
     justify-content: center
 
-.theme
-    display: none
-    &:checked ~ .menu-themes
-        display: flex
+.button-theme
+    display: flex
 
 .menu-themes
-    position: absolute
-    top: 102px
-    right: 218px
-    display: none
     width: 170px
     height: 102px
+    display: none
     flex-direction: column
-    justify-content: center
-    align-items: center
     background: #E6E6E6
     box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF
-    a
+    z-index: 1
+    div 
+        display: flex
+        align-items: center
         width: 150px
         height: 36px
-        display: flex
-        justify-content: left
-        align-items: center
-        text-decoration: none
-        color: #110038
+        margin-left: 10px
+        margin-top: 10px
+        p    
+            color: #110038
+            font-size: 16px
+            margin-left: 16px
         &:nth-child(1)
             background: #FFF4FD;
             border: 1px solid #CCA6C9;
             box-shadow: inset -1px -1px 0 0 #E6DCE4, inset 1px 1px 0 0 #FFFFFF;
-            margin-bottom: 10px
         &:nth-child(2)
             background: #F0F0F0;
             border: 1px solid #808080;
             box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
-        span
-            margin-left: 16px
+            margin-bottom: 10px
 
 .mis-guifos
     width: 76px
@@ -95,6 +93,8 @@
     height: 36px
     display: flex
     justify-content: space-evenly
+    margin-right: 18px
+    margin-left: 8px
     background-color: #E6E6E6
     border: 1px solid #808080
     box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF

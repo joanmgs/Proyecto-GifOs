@@ -20,8 +20,8 @@
     <title>GifOs</title>
 </head>
 
-<body>
-    <header>
+<body class="sailor-day">
+    <header class="header">
         
         <div class="top-main-bar">
             <p>¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número de visitas: <span>12.765.803</span></p>
@@ -31,32 +31,25 @@
             <img class="logo" src="./assets/gifOF_logo.png" alt="logo con el texto gif.os"/>
 
             <div class="container-top-button">
-                <button type="button" class="create-gif button">
+                <div class="create-gif button">
                     <a href="./create-gif.html">Crear Guifos</a>
-                </button>
+                </div>
 
-                <!-- <div class="choose-theme-container"> -->
+                <section class="choose-theme-button">
+                    <div class="button-theme">
+                        <div class="choose-theme button">Elegir Tema</div> 
 
-                    <div class="choose-theme button">Elegir Tema</div> 
+                        <div class="dropdown-button button">
+                            <img src="./assets/dropdown.svg" alt="flecha habia abajo"/>
+                        </div>
+                    </div>
 
-                    <section class="choose-theme-button">
-
-                        <input type="checkbox" name="theme" id="theme" class="theme">
-                        <label for="theme">
-                            <div class="dropdown-button button">
-                                <img src="./assets/dropdown.svg" alt="flecha habia abajo"/>
-                            </div>
-                        </label>
-
-                        <section class="menu-themes">
-                            <a href="#"><span>Sailor Day</span></a>
-                            <a href="#"><span>Sailor Night</span></a>
-                        </section>
-
+                    <section class="menu-themes">
+                        <div class="sailor-day"> <p>Sailor Day</p> </div>
+                        <div class="sailor-night"> <p>Sailor Night</p> </div>
                     </section>
-                    
-                    
-                <!-- </div> -->
+                </section>
+
                 <div class="mis-guifos">
                     <a href="./favorite.html">Mis Guifos</a>
                     <a class="a-test"></a>
@@ -65,23 +58,29 @@
         </section>
 
     </header>
+
     <nav class="buscador">
-        <header>Buscar</header>
-        <section>
-            <input type="text" placeholder="Busca gifs, hashtags, temas, busca lo que quieras…"/>
-            <!-- Poner un ::before con la lupa en el button Buscar -->
-            <button type="button" class="search-button">
-                <img src="./assets/lupa_inactive.svg" alt="Lupa"/>
-                Buscar
-            </button>
+        
+        <section class="container-top-main-bar">
+            <header class="top-main-bar search-bar"><p>Buscar</p></header>
+            <div class="container-searcher">
+                <input class="search" type="text" placeholder="Busca gifs, hashtags, temas, busca lo que quieras…"/>
+                <button type="button" class="search-button">
+                    <img src="./assets/lupa_inactive.svg" alt="Lupa"/>
+                    Buscar
+                </button>
+            </div>
+            
         </section>
         <!-- La seccion siguiente va a estar escondida y funcionará como el menú hamburguesa -->
-        <section>
-            <button type="button">Resultado de búsqueda sugerido</button>
-            <button type="button">Un resultado similar de búsqueda</button>
-            <button type="button">Y otro más</button>
+        <section class="menu-input">
+            <div>Resultado de búsqueda sugerido</div>
+            <div>Un resultado similar de búsqueda</div>
+            <div>Y otro más</div>
         </section>
+
     </nav>
+
     <summary>
         <header>Hoy te sugerimos:</header>
         <figure>
@@ -109,6 +108,8 @@
 
 
     <!-- Javascript -->
+    <script src="./scripts/jquery.js"></script>
+    <script src="./scripts/theme.js"></script>
     <script src="./scripts/search.js"></script>
     <script src="./scripts/videos.js"></script>
 </body>
