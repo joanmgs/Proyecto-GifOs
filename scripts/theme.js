@@ -10,6 +10,7 @@ $('.sailor-day-button').click(function(){
     $('.night-bar').addClass('day-bar').removeClass('night-bar');
     $('.logo').attr('src','./assets/gifOF_logo.png');
     $('.night-button').addClass('day-button').removeClass('night-button');
+    $('.night-font').addClass('day-font').removeClass('night-font');
 });
 //Sailor Night
 $('.sailor-night-button').click(function(){
@@ -17,4 +18,5 @@ $('.sailor-night-button').click(function(){
     $('.day-bar').addClass('night-bar').removeClass('day-bar');
     $('.logo').attr('src','./assets/gifOF_logo_dark.png');
     $('.day-button').addClass('night-button').removeClass('day-button');
+    $('.day-font').addClass('night-font').removeClass('day-font');
 });

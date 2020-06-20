@@ -69,7 +69,6 @@
   height: 36px;
   border: 1px solid #110038;
   font-size: 16px;
-  color: #110038;
   letter-spacing: 0;
   text-align: center;
   line-height: 18px;
@@ -91,10 +90,9 @@
 
 .create-gif a {
   text-decoration: none;
-  color: #110038;
 }
 
-.create-gif a:active, .create-gif a:visited {
+.create-gif a:active {
   color: #110038;
 }
 
@@ -179,7 +177,7 @@
   margin-bottom: 10px;
 }
 
-.mis-guifos {
+.mis-gifos {
   width: 76px;
   height: 18x;
   -webkit-box-sizing: border-box;
@@ -196,25 +194,18 @@
           justify-content: center;
 }
 
-.mis-guifos a {
+.mis-gifos a {
   text-decoration: none;
   font-size: 16px;
-  color: #110038;
   letter-spacing: 0;
   line-height: 18px;
 }
 
-.mis-guifos .a-test {
-  width: 8px;
-  height: 2px;
-  background-color: #110038;
-}
-
-.mis-guifos:hover {
+.mis-gifos:hover {
   outline: 1px dotted #110038;
 }
 
-.mis-guifos:hover:active {
+.mis-gifos:hover:active {
   opacity: 0.5;
 }
 
@@ -319,6 +310,14 @@ body {
   background: #EE3EFE;
   -webkit-box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
           box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
+}
+
+.day-font {
+  color: #110038;
+}
+
+.night-font {
+  color: #FFFFFF;
 }
 
 .search {
