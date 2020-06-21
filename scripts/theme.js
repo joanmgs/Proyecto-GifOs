@@ -20,3 +20,26 @@ $('.sailor-night-button').click(function(){
     $('.day-button').addClass('night-button').removeClass('day-button');
     $('.day-font').addClass('night-font').removeClass('day-font');
 });
+
+//Sombra a botones con hover
+// let shadowButton = document.createElement('div');
+// function createShadow(){
+    
+//     let shadowButton = $('<div></div>');
+    
+//     shadowButton.addClass('shadow');
+    
+//     $('.shadow-hover').before(shadowButton);
+
+//     $('.shadow-container-1').hover(function(){
+//         shadowButton.addClass('shadow-size-140');
+//         shadowButton.toggle();
+//     });
+
+    // $('.shadow-container-2').hover(function(){
+    //     shadowButton.addClass('shadow-size-127');
+    //     shadowButton.toggle();
+    // });
+
+// }
+// createShadow();
