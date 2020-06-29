@@ -11,6 +11,7 @@ $('.sailor-day-button').click(function(){
     $('.logo').attr('src','./assets/gifOF_logo.png');
     $('.night-button').addClass('day-button').removeClass('night-button');
     $('.night-font').addClass('day-font').removeClass('night-font');
+    $('.night-see').addClass('day-see').removeClass('night-see');
 });
 //Sailor Night
 $('.sailor-night-button').click(function(){
@@ -19,6 +20,7 @@ $('.sailor-night-button').click(function(){
     $('.logo').attr('src','./assets/gifOF_logo_dark.png');
     $('.day-button').addClass('night-button').removeClass('day-button');
     $('.day-font').addClass('night-font').removeClass('day-font');
+    $('.day-see').addClass('night-see').removeClass('day-see');
 });
 
 //Sombra a botones con hover

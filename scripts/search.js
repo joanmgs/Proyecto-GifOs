@@ -1,13 +1,22 @@
-//Botón de buscar
-$('.search-button').click(function(){
-    console.log('click');
-    $('.menu-input').toggle();
-});
+//Resultado al entrar texto en el input #search
+let inputText = document.querySelector('#search');
+inputText.addEventListener('keyup', showHideSearchMenu);
 
-//Resultado al poner texto en input
-$('.search').keydown(function(){
-    if(event.key === 'Enter' && $('.search').val() !== ''){
-        console.log('ingreso: ', $('.search').val());
-        $('.menu-input').toggle(true);
-    } 
-});
+async function showHideSearchMenu(){
+    let menuInput = document.querySelector('#menu-input');
+
+    if(inputText.value == ''){
+        menuInput.style.display = "none";
+    }else{
+        menuInput.style.display = "block";
+        
+        let url = `https://api.giphy.com/v1/tags/related/${inputText.value}?api_key=${APIKey}&limit=3`;
+        let resp = await fetch(url);
+        let suggestedSearchData = await resp.json();
+        
+        for(let i = 0; i<3; i++){
+            let suggestElement = document.querySelector(`#suggest-term${i+1}`);
+            suggestElement.innerHTML = `${suggestedSearchData.data[i].name}`;
+        }
+    }
+}

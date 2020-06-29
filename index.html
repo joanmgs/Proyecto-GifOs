@@ -21,6 +21,8 @@
 </head>
 
 <body class="day-background">
+
+<!-- SECCIÓN OPCIONES -->
     <header class="header">
         
         <div class="top-main-bar day-bar">
@@ -55,16 +57,16 @@
                 </div>
             </div>            
         </section>
-
     </header>
 
+<!-- SECCIÓN BUSCADOR -->
     <nav class="searcher">
         
         <section class="container-top-main-bar">
             <header class="top-main-bar day-bar search-bar"><p>Buscar</p></header>
             <div class="container-searcher">
-                <input class="search" type="text" placeholder="Busca gifs, hashtags, temas, busca lo que quieras…"/>
-                <button type="button" class="search-button">
+                <input id="search" class="search" type="text" placeholder="Busca gifs, hashtags, temas, busca lo que quieras…"/>
+                <button type="button" class="search-button" id="search-button">
                     <img src="./assets/lupa_inactive.svg" alt="Lupa"/>
                     Buscar
                 </button>
@@ -72,42 +74,86 @@
             
         </section>
         <!-- La seccion siguiente va a estar escondida y funcionará como el menú hamburguesa -->
-        <section class="menu-input">
-            <div>Resultado de búsqueda sugerido</div>
-            <div>Un resultado similar de búsqueda</div>
-            <div>Y otro más</div>
+        <section class="menu-input" id="menu-input">
+            <div id="suggest-term1">Resultado de búsqueda sugerido</div>
+            <div id="suggest-term2">Un resultado similar de búsqueda</div>
+            <div id="suggest-term3">Y otro más</div>
         </section>
 
     </nav>
 
-    <summary>
-        <header>Hoy te sugerimos:</header>
-        <figure>
-            <img src="#" alt="Primera sugerencia" class="suggestion1"/>
-            <img src="#" alt="Segunda sugerencia" class="suggestion2"/>
-            <img src="#" alt="Tercera sugerencia" class="suggestion3"/>
-            <img src="#" alt="Cuarta sugerencia" class="suggestion4"/>
+<!-- SUGERENCIAS -->
+    <section class="suggestions">
+        <header class="title-bar">Hoy te sugerimos:</header>
+        <figure class="container-suggestions">
+            <div class="card">
+                <div class="top-card-bar day-bar">
+                    <p id="trendGif1">#nombre_gif1</p>
+                    <img src="./assets/close.svg" alt="cerrar">
+                </div>
+                <div class="card-image">
+                    <img id="suggest1" src="" alt="">
+                    <div class="see-more day-see">Ver más...</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="top-card-bar day-bar">
+                    <p id="trendGif2">#nombre_gif2</p>
+                    <img src="./assets/close.svg" alt="cerrar">
+                </div>
+                <div class="card-image">
+                    <img id="suggest2" src="" alt="">
+                    <div class="see-more day-see">Ver más...</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="top-card-bar day-bar">
+                    <p id="trendGif3">#nombre_gif3</p>
+                    <img src="./assets/close.svg" alt="cerrar">
+                </div>
+                <div class="card-image">
+                    <img id="suggest3" src="" alt="">
+                    <div class="see-more day-see">Ver más...</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="top-card-bar day-bar">
+                    <p id="trendGif4">#nombre_gif4</p>
+                    <img src="./assets/close.svg" alt="cerrar">
+                </div>
+                <div class="card-image">
+                    <img id="suggest4" src="" alt="">
+                    <div class="see-more day-see">Ver más...</div>
+                </div>
+            </div>
         </figure>
-    </summary>
-    <section>
-        <header>Tendencias:</header>
+    </section>
+
+<!-- TENDENCIAS -->
+    <section class="in-trend">
+        <header class="title-bar">Tendencias:</header>
         <figure>
-            <img src="#" alt="Tendencia 1" class="gif1"/>
-            <img src="#" alt="Tendencia 2" class="gif2"/>
-            <img src="#" alt="Tendencia 3" class="gif3"/>
-            <img src="#" alt="Tendencia 4" class="gif4"/>
-            <img src="#" alt="Tendencia 5" class="gif5"/>
-            <img src="#" alt="Tendencia 6" class="gif6"/>
-            <img src="#" alt="Tendencia 7" class="gif7"/>
-            <img src="#" alt="Tendencia 8" class="gif8"/>
-            <img src="#" alt="Tendencia 9" class="gif9"/>
-            <img src="#" alt="Tendencia 10" class="gif10"/>
+            <img src="#" alt="Tendencia 1" class="gif1 trend-gif"/>
+            <img src="#" alt="Tendencia 2" class="gif2 trend-gif"/>
+            <img src="#" alt="Tendencia 3" class="gif3 trend-gif"/>
+            <img src="#" alt="Tendencia 4" class="gif4 trend-gif"/>
+            <img src="#" alt="Tendencia 5" class="gif5 trend-gif"/>
+            <img src="#" alt="Tendencia 6" class="gif6 trend-gif"/>
+            <img src="#" alt="Tendencia 7" class="gif7 trend-gif"/>
+            <img src="#" alt="Tendencia 8" class="gif8 trend-gif"/>
+            <img src="#" alt="Tendencia 9" class="gif9 trend-gif"/>
+            <img src="#" alt="Tendencia 10" class="gif10 trend-gif"/>
         </figure>
     </section>
 
 
+    
     <!-- Javascript -->
     <script src="./scripts/jquery.js"></script>
+    <script>
+        let APIKey = 'oyAB67SNUuAU6Vd5X7FnZ5YHpGfbGZiD';
+    </script>
+    <script src="./scripts/cards.js"></script>
     <script src="./scripts/theme.js"></script>
     <script src="./scripts/search.js"></script>
     <script src="./scripts/videos.js"></script>
