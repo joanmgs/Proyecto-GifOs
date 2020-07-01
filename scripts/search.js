@@ -7,6 +7,19 @@ async function showHideSearchMenu(){
 
     if(inputText.value == ''){
         menuInput.style.display = "none";
+        
+        let searchButton = document.getElementById('search-button');
+        let imgLupa = document.getElementById('lupa');
+        if(nightTheme){
+            imgLupa.setAttribute('src','./assets/lupa.svg');
+            imgLupa.style.opacity = 0.2;
+            searchButton.classList.replace('night-search-button-active','night-search-button-inactive');
+        }else{
+            imgLupa.setAttribute('src','./assets/lupa_inactive.svg');
+            imgLupa.style.opacity = 1;
+            searchButton.classList.replace('day-search-button-active','day-search-button-inactive');
+        }
+        
     }else{
         menuInput.style.display = "block";
         
@@ -18,5 +31,18 @@ async function showHideSearchMenu(){
             let suggestElement = document.querySelector(`#suggest-term${i+1}`);
             suggestElement.innerHTML = `${suggestedSearchData.data[i].name}`;
         }
+        
+        let searchButton = document.getElementById('search-button');
+        let imgLupa = document.getElementById('lupa');
+        if(nightTheme){
+            imgLupa.setAttribute('src','./assets/lupa_light.svg');
+            imgLupa.style.opacity = 1;
+            searchButton.classList.replace('night-search-button-inactive','night-search-button-active');
+        }else{
+            imgLupa.setAttribute('src','./assets/lupa.svg');
+            imgLupa.style.opacity = 1;
+            searchButton.classList.replace('day-search-button-inactive','day-search-button-active');
+        } 
+        
     }
 }

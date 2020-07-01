@@ -1,24 +1,19 @@
 //---------- Sección Header ----------
 
 .header
-    width: 100%
     height: 142px
 
 //Secciones al interior de header
 
 .gifos-box
-    width: 100%
     height: 118px
     display: flex
     justify-content: space-between
     align-items: center
 
-.container-top-button
-    display: flex
-    height: 36px
-    margin-right: 9.8%
-
 .choose-theme-button
+    width: 39.72% // ! AQUÌ HICE EL CAMBIO (167)
+    margin-right: 3.92%
     display: flex
     flex-direction: column
     cursor: pointer
@@ -51,10 +46,20 @@
     flex-direction: column
     align-items: center
     figure
-        display: flex
-        justify-content: center
-        flex-wrap: wrap
+        width: 83.3%
+        display: grid
+        grid-template: repeat(7, 298px) / repeat(4, 24%)
+        gap: 1.33%
         margin-top: 1px
-        img
-            margin-right: 16px
-            margin-bottom: 16px
+        div.trend-card
+            display: flex
+            justify-content: center
+            align-items: center
+            &:nth-child(5n)
+                grid-column: span 2
+            img
+                object-fit: cover
+                width: 100%
+                height: 100%
+                
+                
