@@ -350,6 +350,16 @@
   color: #FFFFFF;
 }
 
+.day-tag-container {
+  background-image: -webkit-gradient(linear, right top, left top, from(#F7C9F3), to(#4180F6));
+  background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
+}
+
+.night-tag-container {
+  background-image: -webkit-gradient(linear, right top, left top, from(#EE3EFE), to(#2E32FB));
+  background-image: linear-gradient(270deg, #EE3EFE 0%, #2E32FB 100%);
+}
+
 .search {
   width: 88.083%;
   height: 48px;
@@ -628,8 +638,6 @@
 .trend-hover div {
   width: 100%;
   height: 24px;
-  background-image: -webkit-gradient(linear, right top, left top, from(#F7C9F3), to(#4180F6));
-  background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

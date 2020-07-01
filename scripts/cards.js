@@ -22,11 +22,26 @@ async function trendCards(){
     let resp = await fetch(url);
     let suggestData = await resp.json();
 
-    for(let i=0; i<25; i++){
+    for(let i=0; i<26; i++){
         let imageSuggestGif = document.querySelector(`#trend-gif${i+1}`);
-        imageSuggestGif.setAttribute('src',suggestData.data[i].images.original.url);
+        console.log(`#trend-gif${i+1}`);
+        console.log(suggestData.data[i].images.original.url);
 
+        imageSuggestGif.setAttribute('src',suggestData.data[i].images.original.url);
         imageSuggestGif.setAttribute('alt',suggestData.data[i].title); //para accesibilidad
+
+        let tagTerm = suggestData.data[i].title;
+        let tagTermLink = tagTerm.replace(/\s/g, '_');
+
+        let url = `https://api.giphy.com/v1/tags/related/${tagTermLink}?api_key=${APIKey}`;
+        let tagResp = await fetch(url);
+        let tagData = await tagResp.json();
+        console.log(tagData);
+        console.log(tagData.data.name);
+
+        let tags = document.getElementsByClassName('tags-hover');
+
+        tags[i].innerHTML = `#${tagData.data[0].name} #${tagData.data[1].name} #${tagData.data[2].name}`
     }    
 };
 trendCards();

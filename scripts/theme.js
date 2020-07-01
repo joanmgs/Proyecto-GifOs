@@ -16,6 +16,7 @@ $('.sailor-day-button').click(function(){
     $('.night-see').addClass('day-see').removeClass('night-see');
     $('.night-mis-gifos').addClass('day-mis-gifos').removeClass('night-mis-gifos');
     $('.night-search-button-inactive').addClass('day-search-button-inactive').removeClass('night-search-button-inactive');
+    $('.night-tag-container').addClass('day-tag-container').removeClass('night-tag-container');
     
 });
 //Sailor Night
@@ -30,6 +31,7 @@ $('.sailor-night-button').click(function(){
     $('.day-mis-gifos').addClass('night-mis-gifos').removeClass('day-mis-gifos');
     $('.day-search-button-inactive').addClass('night-search-button-inactive').removeClass('day-search-button-inactive');
     $('#lupa').attr('src','./assets/lupa.svg').css('opacity',0.2);
+    $('.day-tag-container').addClass('night-tag-container').removeClass('day-tag-container');
 });
 
 //Sombra a botones con hover
