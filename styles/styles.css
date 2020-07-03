@@ -505,9 +505,9 @@
   width: 83.3%;
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: (298px)[7];
+  -ms-grid-rows: (298px)[8];
   -ms-grid-columns: (24%)[4];
-      grid-template: repeat(7, 298px)/repeat(4, 24%);
+      grid-template: repeat(8, 298px)/repeat(4, 24%);
   gap: 1.33%;
   margin-top: 1px;
 }

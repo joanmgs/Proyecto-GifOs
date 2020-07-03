@@ -22,7 +22,7 @@ async function trendCards(){
     let resp = await fetch(url);
     let suggestData = await resp.json();
 
-    for(let i=0; i<26; i++){
+    for(let i=0; i<25; i++){
         let imageSuggestGif = document.querySelector(`#trend-gif${i+1}`);
         console.log(`#trend-gif${i+1}`);
         console.log(suggestData.data[i].images.original.url);
@@ -31,17 +31,21 @@ async function trendCards(){
         imageSuggestGif.setAttribute('alt',suggestData.data[i].title); //para accesibilidad
 
         let tagTerm = suggestData.data[i].title;
-        let tagTermLink = tagTerm.replace(/\s/g, '_');
+        let tagTermCleaned = tagTerm.split(' GIF')[0];
+        let tagTermLink = tagTermCleaned.replace(/\s/g, '_');
 
-        let url = `https://api.giphy.com/v1/tags/related/${tagTermLink}?api_key=${APIKey}`;
-        let tagResp = await fetch(url);
+        let urlTag = `https://api.giphy.com/v1/tags/related/${tagTermLink}?api_key=${APIKey}`;
+        let tagResp = await fetch(urlTag);
         let tagData = await tagResp.json();
         console.log(tagData);
-        console.log(tagData.data.name);
 
         let tags = document.getElementsByClassName('tags-hover');
+        
+        const hashtag0 = tagData.data[0] ? tagData.data[0].name : tagData.data[1].name;
+        const hashtag1 = tagData.data[1] ? tagData.data[1].name : tagData.data[2].name;
+        const hashtag2 = tagData.data[2] ? tagData.data[2].name : tagData.data[3].name;
 
-        tags[i].innerHTML = `#${tagData.data[0].name} #${tagData.data[1].name} #${tagData.data[2].name}`
+        tags[i].innerHTML = `#${hashtag0} #${hashtag1} #${hashtag2}`;
     }    
 };
 trendCards();
