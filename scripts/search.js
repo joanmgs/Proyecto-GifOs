@@ -8,6 +8,7 @@ async function showHideSearchMenu(){
     //Condición if para mostrar el menú de sugerencias
     if(inputText.value == ''){
         menuInput.style.display = "none";
+        trendCards();
         
         let searchButton = document.getElementById('search-button');
         let imgLupa = document.getElementById('lupa');
@@ -49,6 +50,7 @@ async function showHideSearchMenu(){
         } 
     }
 }
+
 
 //Guardar información en localStorage para crear historial
 // function historial(){
