@@ -1,0 +1,4 @@
+Problemas 
+
+Cuando está activa la barra de búsqueda, el botón cambia de diseño,
+el problema está que cuando hago el cambio de tema, ese diseño se queda, no cambia.
