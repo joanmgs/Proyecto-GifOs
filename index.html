@@ -62,7 +62,7 @@
     </header>
 
 <!-- SECCIÓN BUSCADOR -->
-    <nav class="searcher">
+    <nav class="searcher" id="searcher">
         
         <section class="container-top-main-bar">
             <header class="top-main-bar day-bar top-search-bar"><p>Buscar</p></header>
@@ -84,13 +84,13 @@
     </nav>
 
 <!-- SUGERENCIAS -->
-    <section class="suggestions">
+    <section class="suggestions" id="suggestions">
         <header class="title-bar">Hoy te sugerimos:</header>
         <figure class="container-suggestions">
             <div class="card">
                 <div class="top-card-bar day-bar">
                     <p id="trendGif1">#nombre_gif1</p>
-                    <img src="./assets/close.svg" alt="cerrar">
+                    <img src="./assets/close.svg" class="close" alt="cerrar">
                 </div>
                 <div class="card-image">
                     <img id="suggest1" src="" alt="">
@@ -100,7 +100,7 @@
             <div class="card">
                 <div class="top-card-bar day-bar">
                     <p id="trendGif2">#nombre_gif2</p>
-                    <img src="./assets/close.svg" alt="cerrar">
+                    <img src="./assets/close.svg" class="close" alt="cerrar">
                 </div>
                 <div class="card-image">
                     <img id="suggest2" src="" alt="">
@@ -110,7 +110,7 @@
             <div class="card">
                 <div class="top-card-bar day-bar">
                     <p id="trendGif3">#nombre_gif3</p>
-                    <img src="./assets/close.svg" alt="cerrar">
+                    <img src="./assets/close.svg" class="close" alt="cerrar">
                 </div>
                 <div class="card-image">
                     <img id="suggest3" src="" alt="">
@@ -120,7 +120,7 @@
             <div class="card">
                 <div class="top-card-bar day-bar">
                     <p id="trendGif4">#nombre_gif4</p>
-                    <img src="./assets/close.svg" alt="cerrar">
+                    <img src="./assets/close.svg" class="close" alt="cerrar">
                 </div>
                 <div class="card-image">
                     <img id="suggest4" src="" alt="">
@@ -336,8 +336,6 @@
             </div>
         </figure>
     </section>
-
-
     
     <!-- Javascript -->
     <script src="./scripts/jquery.js"></script>
@@ -345,6 +343,7 @@
         // API Key de Giphy
         let APIKey = 'oyAB67SNUuAU6Vd5X7FnZ5YHpGfbGZiD';
     </script>
+    <script src="./scripts/historial.js"></script>
     <script src="./scripts/variables.js"></script>
     <script src="./scripts/search.js"></script>
     <script src="./scripts/cards.js"></script>

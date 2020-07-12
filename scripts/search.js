@@ -1,5 +1,4 @@
 //Resultado al entrar texto en el input #search
-let inputText = document.querySelector('#search');
 inputText.addEventListener('keyup', showHideSearchMenu);
 
 async function showHideSearchMenu(){
@@ -8,8 +7,7 @@ async function showHideSearchMenu(){
     //Condición if para mostrar el menú de sugerencias
     if(inputText.value == ''){
         menuInput.style.display = "none";
-        trendCards();
-        
+
         let searchButton = document.getElementById('search-button');
         let imgLupa = document.getElementById('lupa');
         //Condición de estilo cuando hay cambio de tema
@@ -24,18 +22,18 @@ async function showHideSearchMenu(){
         }
     }else{
         menuInput.style.display = "flex";
-        
+
         //Llamado de la API para obtener terminos relacionados (sugerencias).
         let url = `https://api.giphy.com/v1/tags/related/${inputText.value}?api_key=${APIKey}&limit=3`;
         let resp = await fetch(url);
         let suggestedSearchData = await resp.json();
-        
+
         //Llena los 3 cuadros de sugerencias
         for(let i = 0; i<3; i++){
             let suggestElement = document.querySelector(`#suggest-term${i+1}`);
             suggestElement.innerHTML = `${suggestedSearchData.data[i].name}`;
         }
-        
+
         let searchButton = document.getElementById('search-button');
         let imgLupa = document.getElementById('lupa');
         //Condición de estilo cuando hay cambio de tema
