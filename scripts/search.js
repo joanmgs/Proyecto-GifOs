@@ -1,15 +1,10 @@
 //Resultado al entrar texto en el input #search
-inputText.addEventListener('keyup', showHideSearchMenu);
+inputText.addEventListener('input', showSearchMenu);
 
-async function showHideSearchMenu(){
-    let menuInput = document.querySelector('#menu-input');
-
-    //Condición if para mostrar el menú de sugerencias
-    if(inputText.value == ''){
+async function showSearchMenu(e){
+    //Condición para mostrar cuando el menú de sugerencias aparecerá
+    if(!e.target.value){
         menuInput.style.display = "none";
-
-        let searchButton = document.getElementById('search-button');
-        let imgLupa = document.getElementById('lupa');
         //Condición de estilo cuando hay cambio de tema
         if(nightTheme){
             imgLupa.setAttribute('src','./assets/lupa.svg');
@@ -22,7 +17,6 @@ async function showHideSearchMenu(){
         }
     }else{
         menuInput.style.display = "flex";
-
         //Llamado de la API para obtener terminos relacionados (sugerencias).
         let url = `https://api.giphy.com/v1/tags/related/${inputText.value}?api_key=${APIKey}&limit=3`;
         let resp = await fetch(url);
@@ -34,8 +28,6 @@ async function showHideSearchMenu(){
             suggestElement.innerHTML = `${suggestedSearchData.data[i].name}`;
         }
 
-        let searchButton = document.getElementById('search-button');
-        let imgLupa = document.getElementById('lupa');
         //Condición de estilo cuando hay cambio de tema
         if(nightTheme){
             imgLupa.setAttribute('src','./assets/lupa_light.svg');

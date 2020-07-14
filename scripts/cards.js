@@ -1,51 +1,57 @@
-//Asignación de gifs sugeridos a #trendGif$
-async function suggestCards(){
+//Asignación de gifs sugeridos con random gifs
+async function fillSuggestedGifCards(){
     for(let i=0; i<4; i++){
         let urlRandom = `https://api.giphy.com/v1/gifs/random?api_key=${APIKey}&rating=G`;
         let responseRandome = await fetch(urlRandom);
         let dataRandom = await responseRandome.json();
-        //lleno el hashtag con el nombre del usuari que subió el gif
-        let nameSuggestGif = document.querySelector(`#trendGif${i+1}`); 
+        //lleno p con el nombre del usuario que subió el gif como hashtag
+        let nameSuggestGif = document.querySelector(`#suggest-hashtag${i+1}`); 
         nameSuggestGif.innerHTML = `#${dataRandom.data.username}`;
-
+        //leno el src de la img con la url de los gifs random
         let imageSuggestGif = document.querySelector(`#suggest${i+1}`);
         imageSuggestGif.setAttribute('src',dataRandom.data.images.original.url);
-
-        imageSuggestGif.setAttribute('alt',dataRandom.data.title); //para accesibilidad
+        //lleno el alt de la img con el title de los gifs random
+        imageSuggestGif.setAttribute('alt',dataRandom.data.title);
     }
 }
-suggestCards();
-//Función cuando se da click a la x de card en sugerencias
-for(let i=0; i<4; i++){
-    closeButton[i].addEventListener('click', async function changeGif(){
-        let urlRandom = `https://api.giphy.com/v1/gifs/random?api_key=${APIKey}&rating=G`;
-        let responseRandome = await fetch(urlRandom);
-        let dataRandom = await responseRandome.json();
-
-        let nameSuggestGif = document.querySelector(`#trendGif${i+1}`); 
-        nameSuggestGif.innerHTML = `#${dataRandom.data.username}`;
-
-        let imageSuggestGif = document.querySelector(`#suggest${i+1}`);
-        imageSuggestGif.setAttribute('src',dataRandom.data.images.original.url);
-        console.log(imageSuggestGif);
-
-        imageSuggestGif.setAttribute('alt',dataRandom.data.title); //para accesibilidad    
-    });
+fillSuggestedGifCards();
+//Función cuando se da click a la x de los gif sugeridos
+function closeButtonSuggestedGifCard(){
+    for(let i=0; i<4; i++){
+        closeButton[i].addEventListener('click', async function changeGifCard(){
+            let urlRandom = `https://api.giphy.com/v1/gifs/random?api_key=${APIKey}&rating=G`;
+            let responseRandom = await fetch(urlRandom);
+            let dataRandom = await responseRandom.json();
+            //lleno p con el nombre del usuario que subió el gif como hashtag
+            let nameSuggestGif = document.querySelector(`#suggest-hashtag${i+1}`); 
+            nameSuggestGif.innerHTML = `#${dataRandom.data.username}`;
+            //leno el src de la img con la url de los gifs random
+            let imageSuggestGif = document.querySelector(`#suggest${i+1}`);
+            imageSuggestGif.setAttribute('src',dataRandom.data.images.original.url);
+            console.log(imageSuggestGif);
+            //lleno el alt de la img con el title de los gifs random
+            imageSuggestGif.setAttribute('alt',dataRandom.data.title);
+        });
+    }
 }
+closeButtonSuggestedGifCard();
 //Función al hacer click en el botón Ver Más
-for(let i=0; i<4; i++){
-    seeMoreButton[i].addEventListener('click', async function searchingSeeMore(){
-        let urlRandom = `https://api.giphy.com/v1/gifs/random?api_key=${APIKey}&rating=G`;
-        let responseRandome = await fetch(urlRandom);
-        let dataRandom = await responseRandome.json();
-        inputText.value = `${dataRandom.data.title}`;
-
-        window.scroll(0, topLocationTrending);
-        searching();
-    });
+function verMas(){
+    for(let i=0; i<4; i++){
+        verMasButton[i].addEventListener('click', async function searchingVerMas(){
+            let urlRandom = `https://api.giphy.com/v1/gifs/random?api_key=${APIKey}&rating=G`;
+            let responseRandom = await fetch(urlRandom);
+            let dataRandom = await responseRandom.json();
+            //Llenando el inputText con el title para que lo busque y se llene en trendings
+            inputText.value = `${dataRandom.data.title}`;
+            //Baja hasta la sección trending
+            window.scroll(0, topLocationTrending);
+            searching();
+        });
+    }
 }
-
-//Asignación de gifs trends a #trendGif$
+verMas();
+//Asignación de gifs a tendencias
 async function trendCards(){
     trendingTitle.innerHTML = 'Tendencias:';
     let urlTrending = `https://api.giphy.com/v1/gifs/trending?api_key=${APIKey}&limit=25&rating=G`;
@@ -54,10 +60,10 @@ async function trendCards(){
 
     for(let i=0; i<dataTrending.data.length; i++){
         let trendingGif = document.querySelector(`#trend-gif${i+1}`);
-
+        //Asigna el src y alt a las img
         trendingGif.setAttribute('src',dataTrending.data[i].images.original.url);
-        trendingGif.setAttribute('alt',dataTrending.data[i].title); //para accesibilidad
-
+        trendingGif.setAttribute('alt',dataTrending.data[i].title);
+        //Diseña el título para que se pueda leer en la url de búsqueda
         let trendingTitle = dataTrending.data[i].title;
         let trendingTitleCleaned = trendingTitle.split(' GIF')[0];
         let trendingTitleLink = trendingTitleCleaned.replace(/\s/g, '_');
@@ -65,9 +71,7 @@ async function trendCards(){
         let urlTag = `https://api.giphy.com/v1/tags/related/${trendingTitleLink}?api_key=${APIKey}`;
         let tagResp = await fetch(urlTag);
         let tagData = await tagResp.json();
-
-        let tags = document.getElementsByClassName('tags-hover');
-
+        //Llena los hashtags y quita el error cuando uno de los elementos del array no se encuentra
         const hashtag0 = tagData.data[0] ? tagData.data[0].name : tagData.data[1].name;
         const hashtag1 = tagData.data[1] ? tagData.data[1].name : tagData.data[2].name;
         const hashtag2 = tagData.data[2] ? tagData.data[2].name : tagData.data[3].name;
@@ -76,24 +80,23 @@ async function trendCards(){
     }    
 };
 trendCards();
-
 //Funcionalidad de la barra de búsqueda al hacer click en el botón Buscar
-searchButton.addEventListener('click', () => {
-    if(inputText.value !== ''){
+searchButton.addEventListener('click', (event) => {
+    if(event.button == 0 && inputText.value != ''){
         window.scroll(0, topLocationTrending);
         searching();
     }
 });
 //Funcionalidad de la barra de búsqueda al presionar enter/return
 inputText.addEventListener('keypress', (event) => {
-    if(event.keyCode == 13 && inputText.value !== '') {
+    if(event.keyCode == 13 && inputText.value != ''){
         window.scroll(0, topLocationTrending);
         searching();
     }
 });
-
+//Resultados de la búsqueda al ingresar y presionar o hacer click en el botón search
 async function searching(){
-    suggestionSection.style.display = 'none';
+    // menuInput.style.display = 'none';
 
     let urlSearch = `https://api.giphy.com/v1/gifs/search?api_key=${APIKey}&q=${inputText.value}&limit=25&rating=g&lang=es`;
     let responseSearch = await fetch(urlSearch);
@@ -114,15 +117,12 @@ async function searching(){
         if(gifTitle != ''){
             let gifTitleCleaned = gifTitle.split('GIF')[0];
             let textForSearchTags = gifTitleCleaned.replace(/\s/g, '_') == '' ? `${inputText.value}` : gifTitleCleaned.replace(/\s/g, '_');
-            //selección de p donde se llenarán los tags
-            let tags = document.getElementsByClassName('tags-hover');
-    
+            //selección de p donde se llenarán los tags    
             let urlRelatedTag = `https://api.giphy.com/v1/tags/related/${textForSearchTags}?api_key=${APIKey}`;
             let responseRelatedTag = await fetch(urlRelatedTag);
             let dataRelatedTag = await responseRelatedTag.json();
             //condición para poner los tags en p, cuando no es 200 el estado lo llena con #Without tags
             if(dataRelatedTag.meta.status == 200 && dataRelatedTag.data.length){
-                console.log('entra para hashtags');
                 //es posible que llegue el array, pero algunos keys no llegan, entonces se reemplaza por el siguiente
                 const hashtag0 = dataRelatedTag.data[0].name;
                 const hashtag1 = dataRelatedTag.data[1].name;
@@ -133,7 +133,6 @@ async function searching(){
                 tags[i].innerHTML = `#${inputText.value}`;
             }
         }else{
-            let tags = document.getElementsByClassName('tags-hover');
             tags[i].innerHTML = `#${inputText.value}`;
         }
     }

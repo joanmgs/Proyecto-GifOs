@@ -3,7 +3,6 @@ $('.button-theme').click(function(){
     $('.menu-themes').toggle();
 });
 
-let nightTheme = false;
 //Cambios de temas
 //Sailor Day
 $('.sailor-day-button').click(function(){
