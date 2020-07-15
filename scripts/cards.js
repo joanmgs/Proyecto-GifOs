@@ -139,6 +139,7 @@ async function searching(comeFromHistorial){
     //Llamo a la función para crear divs debajo de la barra de búsqueda con el historial de búsquedas
     //el condicional es para no duplicar el botón al validar si la función de click se activo
     if(!comeFromHistorial){
+        console.log('entro')
         historialDivBelow(inputText.value);
     }
     
