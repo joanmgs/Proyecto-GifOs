@@ -14,7 +14,16 @@ $('.sailor-day-button').click(function(){
     $('.night-font').addClass('day-font').removeClass('night-font');
     $('.night-see').addClass('day-see').removeClass('night-see');
     $('.night-mis-gifos').addClass('day-mis-gifos').removeClass('night-mis-gifos');
-    $('.night-search-button-inactive').addClass('day-search-button-inactive').removeClass('night-search-button-inactive');
+    
+    if(searchButtonActive){
+        console.log('Esta lleno y se pinta');
+        $('#search-button').addClass('day-search-button-active').removeClass('night-search-button-active');
+        $('#lupa').attr('src','./assets/lupa.svg').css('opacity',1);
+    }else{
+        $('#search-button').addClass('day-search-button-inactive').removeClass('night-search-button-inactive');
+        $('#lupa').attr('src','./assets/lupa.svg').css('opacity',0.2);
+    }
+    // $('.night-search-button-inactive').addClass('day-search-button-inactive').removeClass('night-search-button-inactive day-search-button-active');
     $('.night-tag-container').addClass('day-tag-container').removeClass('night-tag-container');
     
 });
@@ -28,8 +37,16 @@ $('.sailor-night-button').click(function(){
     $('.day-font').addClass('night-font').removeClass('day-font');
     $('.day-see').addClass('night-see').removeClass('day-see');
     $('.day-mis-gifos').addClass('night-mis-gifos').removeClass('day-mis-gifos');
-    $('.day-search-button-inactive').addClass('night-search-button-inactive').removeClass('day-search-button-inactive');
-    $('#lupa').attr('src','./assets/lupa.svg').css('opacity',0.2);
+    
+    if(searchButtonActive){
+        $('#search-button').addClass('night-search-button-active').removeClass('day-search-button-active');
+        $('#lupa').attr('src','./assets/lupa_light.svg').css('opacity',1);
+    } else {
+        $('#search-button').addClass('night-search-button-inactive').removeClass('day-search-button-inactive');
+        $('#lupa').attr('src','./assets/Combined_Shape.svg').css('opacity',1);
+    }
+
+    
     $('.day-tag-container').addClass('night-tag-container').removeClass('day-tag-container');
 });
 

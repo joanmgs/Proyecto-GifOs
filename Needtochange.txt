@@ -2,3 +2,6 @@ Problemas
 
 Cuando está activa la barra de búsqueda, el botón cambia de diseño,
 el problema está que cuando hago el cambio de tema, ese diseño se queda, no cambia.
+
+Dificultades en historial.js en la lína 3 y 10; debo restringir el número de div que aparecerán y 
+guardar el historial en el local storage para que al recargar la página se quede el historial en la página.

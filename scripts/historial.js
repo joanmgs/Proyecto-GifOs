@@ -17,6 +17,13 @@ function historialDivBelow(inputTextValue){
     div.appendChild(p);
     p.innerHTML = `#${inputTextValue}`;
     section.appendChild(div);
+
+    div.addEventListener('click', function(){
+        inputText.value = inputTextValue;
+        window.scroll(0, topLocationTrending);
+        searching(true);
+    })
+    
     //almaceno las búsquedas en localStorage
     window.localStorage.setItem(`historial${j}`,`${inputTextValue}`);
     j++;

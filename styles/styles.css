@@ -229,6 +229,7 @@
   border: 1px solid #4C2F99;
   -webkit-box-shadow: inset -2px -2px 0 0 #284F99, inset 2px 2px 0 0 #FFFFFF;
           box-shadow: inset -2px -2px 0 0 #284F99, inset 2px 2px 0 0 #FFFFFF;
+  cursor: pointer;
 }
 
 .button-historial p {
@@ -649,11 +650,10 @@
 }
 
 .trend-hover {
-  display: none;
   width: 19.6%;
   height: 296px;
-  position: absolute;
   display: none;
+  position: absolute;
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
@@ -667,9 +667,6 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
