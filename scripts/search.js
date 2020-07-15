@@ -8,24 +8,43 @@ inputText.addEventListener('input', showSearchMenu);
 async function showSearchMenu(e){
     console.log('valor del input', e.target.value);
     //Condición para mostrar cuando el menú de sugerencias aparecerá
+
     if(!e.target.value){
-        console.log('Esta vacìo');
+        console.log('entra vacío');
+
         searchButtonActive = false;
         menuInput.style.display = "none";
         //Condición de estilo cuando hay cambio de tema
         if(nightTheme){
+            console.log('vacío de noche');
             imgLupa.setAttribute('src','./assets/Combined_Shape.svg');
             imgLupa.style.opacity = 1;
             searchButton.classList.replace('night-search-button-active','night-search-button-inactive');
         }else{
+            console.log('vacío de día');
             imgLupa.setAttribute('src','./assets/lupa.svg');
             imgLupa.style.opacity = 0.2;
             searchButton.classList.replace('day-search-button-active','day-search-button-inactive');
         }
-    }else{
-        console.log('Esta lleno');
+
+    } else {
+        console.log('entra lleno');
+
         searchButtonActive = true;
         menuInput.style.display = "flex";
+
+        if(nightTheme){
+            console.log('lleno de noche');
+            imgLupa.setAttribute('src','./assets/lupa_light.svg');
+            imgLupa.style.opacity = 1;
+            searchButton.classList.replace('night-search-button-inactive','night-search-button-active');
+        }else{
+            console.log('lleno de día');
+            imgLupa.setAttribute('src','./assets/lupa.svg');
+            imgLupa.style.opacity = 1;
+            searchButton.classList.replace('day-search-button-inactive','day-search-button-active');
+        }
+
         //Llamado de la API para obtener terminos relacionados (sugerencias).
         let url = `https://api.giphy.com/v1/tags/related/${inputText.value}?api_key=${APIKey}&limit=3`;
         let resp = await fetch(url);
@@ -37,17 +56,6 @@ async function showSearchMenu(e){
             suggestElement.innerHTML = `${suggestedSearchData.data[i].name}`;
         }
 
-        //Condición de estilo cuando hay cambio de tema
-        if(nightTheme){
-            imgLupa.setAttribute('src','./assets/lupa_light.svg');
-            imgLupa.style.opacity = 1;
-            searchButton.classList.replace('night-search-button-inactive','night-search-button-active');
-        }else{
-            console.log('Esta lleno y se pinta');
-            imgLupa.setAttribute('src','./assets/lupa.svg');
-            imgLupa.style.opacity = 1;
-            searchButton.classList.replace('day-search-button-inactive','day-search-button-active');
-        }
     }
 }
 

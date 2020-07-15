@@ -21,6 +21,7 @@ function historialDivBelow(inputTextValue){
     div.addEventListener('click', function(){
         inputText.value = inputTextValue;
         window.scroll(0, topLocationTrending);
+        //true permite indicar que el evento ocurrió
         searching(true);
     })
     
