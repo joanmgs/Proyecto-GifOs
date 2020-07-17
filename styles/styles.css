@@ -230,6 +230,11 @@
   -webkit-box-shadow: inset -2px -2px 0 0 #284F99, inset 2px 2px 0 0 #FFFFFF;
           box-shadow: inset -2px -2px 0 0 #284F99, inset 2px 2px 0 0 #FFFFFF;
   cursor: pointer;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
 }
 
 .button-historial p {
@@ -239,12 +244,19 @@
   line-height: 18px;
 }
 
-.section-historial {
+.div-historial {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   width: 83.3%;
   margin-top: 12px;
+  overflow-x: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.div-historial::-webkit-scrollbar {
+  display: none;
 }
 
 .anchor-logo {

@@ -16,7 +16,6 @@ $('.sailor-day-button').click(function(){
     $('.night-mis-gifos').addClass('day-mis-gifos').removeClass('night-mis-gifos');
     
     if(searchButtonActive){
-        console.log('Esta lleno y se pinta');
         $('#search-button').addClass('day-search-button-active').removeClass('night-search-button-active');
         $('#lupa').attr('src','./assets/lupa.svg').css('opacity',1);
     }else{

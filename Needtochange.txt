@@ -1,13 +1,6 @@
 Problemas 
 
-Dificultades en historial.js en la lína 3 y 10; debo restringir el número de div que aparecerán y 
-guardar el historial en el local storage para que al recargar la página se quede el historial en la página.
-
 El hover que muestra los tags de los gifs en tendencias ocupa el tamaño adecuado en cada card pero 
 cuando llega a la 5 donde por el grid se ocupan dos celdas más el espacio entre ellas, no lo ocupa entero
 
-Crear un número de gifs específico acorde al tamaño del array que devuelva la búsqueda.
-
 En el botón Mis Guifos, cuando hago el hover el botón se expande y deforma el botón a la izquierda
-
-falta aplicar la búsqueda a las sugerencias en el menuInput

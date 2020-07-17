@@ -1,14 +1,9 @@
 //Historial del inputText.value en recuadros debajo de la barra de búsqueda
-//!restringir el número de p que se puede crear
-let section = document.createElement('section');
-section.classList.add('section-historial');
+let divHistorial = document.createElement('div');
+divHistorial.classList.add('div-historial');
 
 let searcherSection = document.getElementById('searcher');
-searcherSection.appendChild(section);
-//inicalizo j en 0 para ir indicando qué número de objeto cada vez que se de click
-
-//!no estoy seguro cómo hacer con el local storage
-let j = 0;
+searcherSection.appendChild(divHistorial);
 
 function historialDivBelow(inputTextValue){
     let div = document.createElement('div');
@@ -16,17 +11,12 @@ function historialDivBelow(inputTextValue){
     let p = document.createElement('p');
     div.appendChild(p);
     p.innerHTML = `#${inputTextValue}`;
-    section.appendChild(div);
+    divHistorial.prepend(div);
 
     div.addEventListener('click', function(){
-        console.log('click de historial')
         inputText.value = inputTextValue;
         window.scroll(0, topLocationTrending);
         //true permite indicar que el evento ocurrió
         searching(true);
     });
-    
-    //almaceno las búsquedas en localStorage
-    window.localStorage.setItem(`historial${j}`,`${inputTextValue}`);
-    j++;
 }

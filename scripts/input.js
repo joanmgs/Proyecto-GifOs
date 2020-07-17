@@ -1,4 +1,4 @@
-//Resultado al entrar texto en el input #search
+//Diseño al ingresar texto en el input
 inputText.addEventListener('input', showSearchMenu);
 
 //*Con respecto a la opacidad de las lupas, se realiza porque una de ellas (lupa.svg)
@@ -6,7 +6,6 @@ inputText.addEventListener('input', showSearchMenu);
 //*las otras lupas tienen opacity 1 para regresar a la normalidad
 
 async function showSearchMenu(event){
-    console.log('en showsearchmenu')
     //Condición para mostrar cuando el menú de sugerencias aparecerá
     if(!event.target.value){
         searchButtonActive = false;
@@ -39,25 +38,17 @@ async function showSearchMenu(event){
         let resp = await fetch(url);
         let suggestedSearchData = await resp.json();
         //Llena los 3 cuadros de sugerencias
-        console.log('en valor lleno')
         for(let i = 0; i<3; i++){
             let suggestTerm = document.getElementsByClassName('suggest-term');
-
             suggestTerm[i].innerHTML = `${suggestedSearchData.data[i].name}`;
-            // console.log('click')
-
             suggestTerm[i].addEventListener('click', function(){
-                
                 inputText.value = suggestedSearchData.data[i].name;
-                
                 window.scroll(0, topLocationTrending);
-
                 searching(true);
             });
         }
     }
 }
-
 
 //Guardar información en localStorage para crear historial
 // function historial(){

@@ -4,6 +4,7 @@ async function fillSuggestedGifCards(){
         let urlRandom = `https://api.giphy.com/v1/gifs/random?api_key=${APIKey}&rating=G`;
         let responseRandome = await fetch(urlRandom);
         let dataRandom = await responseRandome.json();
+        console.log(dataRandom.data.id);
         //lleno p con el nombre del usuario que subió el gif como hashtag
         let nameSuggestGif = document.querySelector(`#suggest-hashtag${i+1}`); 
         nameSuggestGif.innerHTML = `#${dataRandom.data.username}`;
@@ -12,12 +13,9 @@ async function fillSuggestedGifCards(){
         imageSuggestGif.setAttribute('src',dataRandom.data.images.original.url);
         //lleno el alt de la img con el title de los gifs random
         imageSuggestGif.setAttribute('alt',dataRandom.data.title);
-    }
-}
-fillSuggestedGifCards();
-//Función cuando se da click a la x de los gif sugeridos
-function closeButtonSuggestedGifCard(){
-    for(let i=0; i<4; i++){
+        //guardo el title obtenido en el html con el atributo data-title
+        document.getElementsByClassName('see-more')[i].setAttribute('data-title', dataRandom.data.title);
+
         closeButton[i].addEventListener('click', async function changeGifCard(){
             let urlRandom = `https://api.giphy.com/v1/gifs/random?api_key=${APIKey}&rating=G`;
             let responseRandom = await fetch(urlRandom);
@@ -28,22 +26,23 @@ function closeButtonSuggestedGifCard(){
             //leno el src de la img con la url de los gifs random
             let imageSuggestGif = document.querySelector(`#suggest${i+1}`);
             imageSuggestGif.setAttribute('src',dataRandom.data.images.original.url);
-            console.log(imageSuggestGif);
             //lleno el alt de la img con el title de los gifs random
             imageSuggestGif.setAttribute('alt',dataRandom.data.title);
+            //guardo el title obtenido en el html con el atributo data-title
+            document.getElementsByClassName('see-more')[i].setAttribute('data-title', dataRandom.data.title);
         });
     }
 }
-closeButtonSuggestedGifCard();
+fillSuggestedGifCards();
 //Función al hacer click en el botón Ver Más
 function verMas(){
     for(let i=0; i<4; i++){
         verMasButton[i].addEventListener('click', async function searchingVerMas(){
-            let urlRandom = `https://api.giphy.com/v1/gifs/random?api_key=${APIKey}&rating=G`;
-            let responseRandom = await fetch(urlRandom);
-            let dataRandom = await responseRandom.json();
-            //Llenando el inputText con el title para que lo busque y se llene en trendings
-            inputText.value = `${dataRandom.data.title}`;
+            //obtengo del data-title del html el title del gif random
+            //dataset.[lo que sigue después de data- en el html] (en este caso yo le llamé data-title)
+            const title = this.dataset.title;
+            inputText.value = title;
+            console.log(inputText.value)
             //Baja hasta la sección trending
             window.scroll(0, topLocationTrending);
             searching();
@@ -61,27 +60,6 @@ async function trendCards(){
     let dataTrending = await responseTrending.json();
 
     for(let i=0; i<dataTrending.data.length; i++){
-        
-        // let divTrendCard = document.createElement('div');
-        // let imgTrendCard = document.createElement('img');
-        // let divTrendHover = document.createElement('div');
-        // let divTagContainer = document.createElement('div');
-        // let pTagsHover = document.createElement('p');
-        
-        // divTrendCard.classList.add('trend-card');
-        // imgTrendCard.id = `trend-gif${i+1}`;
-        // imgTrendCard.setAttribute('src',dataTrending.data[i].images.original.url);
-        // imgTrendCard.setAttribute('alt',dataTrending.data[i].title);
-        // divTrendHover.classList.add('trend-hover');
-        // divTagContainer.classList.add('day-tag-container');
-        // pTagsHover.classList.add('tags-hover');
-
-        // figureInTrend.appendChild(divTrendCard);
-        // divTrendCard.appendChild(imgTrendCard);
-        // divTrendCard.appendChild(divTrendHover);
-        // divTrendHover.appendChild(divTagContainer);
-        // divTagContainer.appendChild(pTagsHover);
-
         let trendingGif = document.querySelector(`#trend-gif${i+1}`);
         //Asigna el src y alt a los gif de trending
         trendingGif.setAttribute('src',dataTrending.data[i].images.original.url);
@@ -139,10 +117,8 @@ async function searching(comeFromHistorial){
     //Llamo a la función para crear divs debajo de la barra de búsqueda con el historial de búsquedas
     //el condicional es para no duplicar el botón al validar si la función de click se activo
     if(!comeFromHistorial){
-        console.log('entro')
         historialDivBelow(inputText.value);
     }
-    
 
     for(let i=0; i<searchData.data.length; i++){
         //selecciona cada img

@@ -111,13 +111,21 @@
     border: 1px solid #4C2F99
     box-shadow: inset -2px -2px 0 0 #284F99, inset 2px 2px 0 0 #FFFFFF
     cursor: pointer
+    align-content: center
+    min-width: fit-content
     p
         font-size: 14px;
         color: #FFFFFF;
         letter-spacing: 0;
         line-height: 18px;
 
-.section-historial
+.div-historial
     display: flex
     width: 83.3%
     margin-top: 12px
+    overflow-x: auto
+    //las propiedades de aquí hacia abajo son para que la barra de scroll desaparezca
+    -ms-overflow-style: none //en IE y Edge
+    scrollbar-width: none //en firefox
+    &::-webkit-scrollbar
+        display: none //en safari, chrome y opera
