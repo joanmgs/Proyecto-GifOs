@@ -163,6 +163,9 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 1px dotted transparent;
 }
 
 .mis-gifos a {
@@ -342,8 +345,6 @@
 }
 
 .night-mis-gifos:hover {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
   border: 1px dotted #FFFFFF;
 }
 
@@ -352,8 +353,6 @@
 }
 
 .day-mis-gifos:hover {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
   border: 1px dotted #110038;
 }
 
@@ -663,9 +662,9 @@
 }
 
 .trend-hover {
+  display: none;
   width: 19.6%;
   height: 296px;
-  display: none;
   position: absolute;
   -webkit-box-align: end;
       -ms-flex-align: end;
@@ -725,7 +724,7 @@
 }
 
 .container-top-button {
-  width: 30%;
+  width: 31%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

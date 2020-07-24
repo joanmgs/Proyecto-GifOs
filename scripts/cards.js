@@ -158,6 +158,9 @@ function showTags(){
         //dos funciones: muestra o desaparece el div que opaca un poco el gif y muestra los tags
         function showTrendHover(){
             trendHover[i].style.display = "flex";
+            if((i+1)%5 == 0){
+                trendHover[i].style.width = '41.1%';
+            }
         }
         function hideTrendHover(){
             trendHover[i].style.display = "none";
