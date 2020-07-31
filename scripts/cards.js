@@ -58,7 +58,7 @@ async function trendCards(){
     let urlTrending = `https://api.giphy.com/v1/gifs/trending?api_key=${APIKey}&limit=25&rating=G`;
     let responseTrending = await fetch(urlTrending);
     let dataTrending = await responseTrending.json();
-
+    console.log(dataTrending);
     for(let i=0; i<dataTrending.data.length; i++){
         let trendingGif = document.querySelector(`#trend-gif${i+1}`);
         //Asigna el src y alt a los gif de trending
@@ -102,7 +102,7 @@ inputText.addEventListener('keypress', (event) => {
     if(event.keyCode == 13 && inputText.value != ''){
         window.scroll(0, topLocationTrending);
         searching();
-    }
+    };
 });
 //Resultados de la búsqueda al ingresar y presionar o hacer click en el botón search
 async function searching(comeFromHistorial){
@@ -118,7 +118,7 @@ async function searching(comeFromHistorial){
     //el condicional es para no duplicar el botón al validar si la función de click se activo
     if(!comeFromHistorial){
         historialDivBelow(inputText.value);
-    }
+    };
 
     for(let i=0; i<searchData.data.length; i++){
         //selecciona cada img
@@ -146,7 +146,7 @@ async function searching(comeFromHistorial){
             tags[i].innerHTML = `#${hashtag0} #${hashtag1} #${hashtag2}`;
         }else{
             tags[i].innerHTML = `#${inputText.value}`;
-        }
+        };
     }
 }
 //Moseover sobre trend-card - Aparece y desaparece los tags y el cuadro opaco
@@ -160,11 +160,11 @@ function showTags(){
             trendHover[i].style.display = "flex";
             if((i+1)%5 == 0){
                 trendHover[i].style.width = '41.1%';
-            }
-        }
+            };
+        };
         function hideTrendHover(){
             trendHover[i].style.display = "none";
-        }
-    }
+        };
+    };
 }
 showTags();

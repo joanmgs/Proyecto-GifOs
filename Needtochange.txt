@@ -1,6 +1,7 @@
 Problemas 
 
-El hover que muestra los tags de los gifs en tendencias ocupa el tamaño adecuado en cada card pero 
-cuando llega a la 5 donde por el grid se ocupan dos celdas más el espacio entre ellas, no lo ocupa entero
+Limitar el número de divs a 10, que guardan las búsquedas, adicionalmente, guardarlos en localstorage
 
-En el botón Mis Guifos, cuando hago el hover el botón se expande y deforma el botón a la izquierda
+las trend cards deben crearse dinámicamente, por tanto no deben haber 25 cards en el html
+
+el theme debe guardarse en el local storage para que al cambiar se mantengan las configuraciones a la otra página.
