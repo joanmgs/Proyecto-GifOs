@@ -28,6 +28,8 @@ let nightTheme = false; //switch para cambio de tema
 
 let searchButtonActive = false;
 
+let storageHistorial = []; //array donde se guarda el historial
+
 // CreateElements
 
 // let figureInTrend = document.getElementById('figure-in-trend');

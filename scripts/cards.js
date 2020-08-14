@@ -4,7 +4,7 @@ async function fillSuggestedGifCards(){
         let urlRandom = `https://api.giphy.com/v1/gifs/random?api_key=${APIKey}&rating=G`;
         let responseRandome = await fetch(urlRandom);
         let dataRandom = await responseRandome.json();
-        console.log(dataRandom.data.id);
+
         //lleno p con el nombre del usuario que subió el gif como hashtag
         let nameSuggestGif = document.querySelector(`#suggest-hashtag${i+1}`); 
         nameSuggestGif.innerHTML = `#${dataRandom.data.username}`;
@@ -58,7 +58,7 @@ async function trendCards(){
     let urlTrending = `https://api.giphy.com/v1/gifs/trending?api_key=${APIKey}&limit=25&rating=G`;
     let responseTrending = await fetch(urlTrending);
     let dataTrending = await responseTrending.json();
-    console.log(dataTrending);
+
     for(let i=0; i<dataTrending.data.length; i++){
         let trendingGif = document.querySelector(`#trend-gif${i+1}`);
         //Asigna el src y alt a los gif de trending
@@ -116,6 +116,8 @@ async function searching(comeFromHistorial){
     trendingTitle.innerHTML = `${inputText.value} :`;
     //Llamo a la función para crear divs debajo de la barra de búsqueda con el historial de búsquedas
     //el condicional es para no duplicar el botón al validar si la función de click se activo
+    //comeFromHistorial solo adquiere valor cuando se da click a un botón del historial
+    //mientras tanto es undefined, es decir, un valor falsy
     if(!comeFromHistorial){
         historialDivBelow(inputText.value);
     };
@@ -124,7 +126,6 @@ async function searching(comeFromHistorial){
         //selecciona cada img
         let trendingGif = document.querySelector(`#trend-gif${i+1}`);
         //atribuye src y alt img
-        //!se demora en cargar la imagen
         trendingGif.setAttribute('src',searchData.data[i].images.original.url);
         trendingGif.setAttribute('alt',searchData.data[i].title); //para accesibilidad
         //selección y limpieza de texto para buscar tags
