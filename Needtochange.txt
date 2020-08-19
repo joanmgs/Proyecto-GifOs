@@ -1,5 +1,0 @@
-Problemas 
-
-el theme debe guardarse en el local storage para que al cambiar se mantengan las configuraciones a la otra página.
-
-los botones de historial después de recargarse deben poderse clickear
