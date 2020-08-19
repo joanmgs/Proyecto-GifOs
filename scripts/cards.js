@@ -42,14 +42,43 @@ function verMas(){
             //dataset.[lo que sigue después de data- en el html] (en este caso yo le llamé data-title)
             const title = this.dataset.title;
             inputText.value = title;
-            console.log(inputText.value)
             //Baja hasta la sección trending
             window.scroll(0, topLocationTrending);
             searching();
         });
-    }
-}
+    };
+};
 verMas();
+//generador de trending cards
+function cardGenerator(numberOfCards){
+    //Creo los elementos
+    const trendCardDiv = document.createElement('div');
+    const trendGIfImg = document.createElement('img');
+    const trendHoverDiv = document.createElement('div');
+    const dayTagContainerDiv = document.createElement('div');
+    const tagsHoverP = document.createElement('p');
+    //los añado a sus respectivos lugares
+    containerTrending.appendChild(trendCardDiv);
+    trendCardDiv.appendChild(trendGIfImg);
+    trendCardDiv.appendChild(trendHoverDiv);
+    trendHoverDiv.appendChild(dayTagContainerDiv);
+    dayTagContainerDiv.appendChild(tagsHoverP);
+    //defino sus clases
+    trendCardDiv.classList.add("trend-card");
+    trendGIfImg.id = `trend-gif${numberOfCards+1}`;
+    trendHoverDiv.classList.add('trend-hover');
+    // dayTagContainerDiv.classList.add(`day-tag-container`);
+    dayTagContainerDiv.id = `day-tag-container-${numberOfCards+1}`;
+    tagsHoverP.classList.add('tags-hover');
+
+    if(!nightTheme){
+        dayTagContainerDiv.classList.add(`day-tag-container`);
+        switchThemeTagContainer.push(document.getElementById(`day-tag-container-${numberOfCards+1}`));
+    }else{
+        dayTagContainerDiv.classList.add(`night-tag-container`);
+        switchThemeTagContainer.push(document.getElementById(`night-tag-container-${numberOfCards+1}`));
+    };
+};
 //Asignación de gifs a tendencias
 async function trendCards(){
     //Título de la barra cabecera de la sección de trendings
@@ -60,6 +89,7 @@ async function trendCards(){
     let dataTrending = await responseTrending.json();
 
     for(let i=0; i<dataTrending.data.length; i++){
+        cardGenerator(i);
         let trendingGif = document.querySelector(`#trend-gif${i+1}`);
         //Asigna el src y alt a los gif de trending
         trendingGif.setAttribute('src',dataTrending.data[i].images.original.url);
@@ -86,8 +116,10 @@ async function trendCards(){
             //llena el gif sin tag con las palabras #giphy #gifs
             // pTagsHover.innerHTML = `#giphy #gifs`;
             tags[i].innerHTML = `#giphy #gifs`;
-        }
-    }    
+        };
+    };
+
+    showTags();
 };
 trendCards();
 //Funcionalidad de la barra de búsqueda al hacer click en el botón Buscar
@@ -108,10 +140,16 @@ inputText.addEventListener('keypress', (event) => {
 async function searching(comeFromHistorial){
     //Desaparezco el menú de palabras sugeridas debajo de la barra de búsqueda
     menuInput.style.display= "none";
+    //vacío el contenido del card trending
+    containerTrending.innerHTML = '';
+    //vacíamos el switchThemeTagContainer para evitar acumular los gifs
+    switchThemeTagContainer = [];
 
     let urlSearch = `https://api.giphy.com/v1/gifs/search?api_key=${APIKey}&q=${inputText.value}&limit=25&rating=g&lang=es`;
     let responseSearch = await fetch(urlSearch);
     let searchData = await responseSearch.json();
+    console.count();
+    console.log('tamaño del array: ',searchData.data.length);
     //Lleno la barra blanca que dice tendencias con el valor del input
     trendingTitle.innerHTML = `${inputText.value} :`;
     //Llamo a la función para crear divs debajo de la barra de búsqueda con el historial de búsquedas
@@ -123,6 +161,7 @@ async function searching(comeFromHistorial){
     };
 
     for(let i=0; i<searchData.data.length; i++){
+        cardGenerator(i);
         //selecciona cada img
         let trendingGif = document.querySelector(`#trend-gif${i+1}`);
         //atribuye src y alt img
@@ -148,8 +187,10 @@ async function searching(comeFromHistorial){
         }else{
             tags[i].innerHTML = `#${inputText.value}`;
         };
-    }
-}
+    };
+
+    showTags();
+};
 //Moseover sobre trend-card - Aparece y desaparece los tags y el cuadro opaco
 function showTags(){
     for(let i=0; i<trendingGifCard.length; i++){
@@ -159,6 +200,7 @@ function showTags(){
         //dos funciones: muestra o desaparece el div que opaca un poco el gif y muestra los tags
         function showTrendHover(){
             trendHover[i].style.display = "flex";
+            //la condición para el gif en la posición quinta que posee un width diferente
             if((i+1)%5 == 0){
                 trendHover[i].style.width = '41.1%';
             };
@@ -167,5 +209,4 @@ function showTags(){
             trendHover[i].style.display = "none";
         };
     };
-}
-showTags();
+};

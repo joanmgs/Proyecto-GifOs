@@ -47,7 +47,7 @@ window.addEventListener('load', ()=>{
     storageHistorial = JSON.parse(localStorage.getItem('historial'));
     //si la página se recargo y no hay nada, no se crea el historial nuevamente
     if(storageHistorial.length >0){
-        for(let i = 0; i<5; i++){
+        for(let i = 0; i<storageHistorial.length; i++){
             let divButtonHistorial = document.createElement('div');
             divButtonHistorial.classList.add('button-historial');
             let p = document.createElement('p');
