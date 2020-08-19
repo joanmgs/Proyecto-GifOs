@@ -1,9 +1,5 @@
 Problemas 
 
-las trend cards deben crearse dinámicamente, por tanto no deben haber 25 cards en el html
-
 el theme debe guardarse en el local storage para que al cambiar se mantengan las configuraciones a la otra página.
 
 los botones de historial después de recargarse deben poderse clickear
-
-Subir el cardgenerator arriba, impedir el hosting
