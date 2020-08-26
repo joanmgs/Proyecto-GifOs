@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="search.html"/>
     <link rel="stylesheet" href="favorite.html"/>
-    <link rel="stylesheet" href="create-gif.html"/>
+    <link rel="stylesheet" href="upload.html"/>
     
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&display=swap" rel="stylesheet"/>
@@ -20,12 +20,12 @@
     <title>GifOs</title>
 </head>
 
-<body class="day-background">
+<body class="day-background" id="day-background">
 
 <!-- SECCIÓN OPCIONES -->
     <header class="header">
         
-        <div class="top-main-bar day-bar">
+        <div class="top-main-bar day-bar" id="day-bar-1">
             <p>¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número de visitas: <span>12.765.803</span></p>
         </div>
 
@@ -35,15 +35,15 @@
             </a>
             
             <div class="container-top-button">
-                <div class="create-gif button day-button">
-                    <a class="day-font" href="./create-gif.html">Crear Guifos</a>
+                <div class="create-gif button day-button" id="create-gif">
+                    <a class="day-font" id="day-font-1" href="./upload.html">Crear Guifos</a>
                 </div>
 
                 <section class="choose-theme-button">
                     <div class="button-theme" id="button-theme">
-                        <div class="choose-theme button day-button day-font">Elegir Tema</div> 
+                        <div class="choose-theme button day-button day-font" id="choose-theme">Elegir Tema</div> 
 
-                        <div class="dropdown-button button day-button day-font">
+                        <div class="dropdown-button button day-button day-font" id="dropdown-button">
                             <img src="./assets/dropdown.svg" alt="flecha habia abajo"/>
                         </div>
                     </div>
@@ -54,8 +54,8 @@
                     </section>
                 </section>
 
-                <div class="mis-gifos day-mis-gifos">
-                    <a class="day-font" href="./favorite.html">Mis Guifos</a>
+                <div class="mis-gifos day-mis-gifos" id="day-mis-gifos">
+                    <a class="day-font" id="day-font-2" href="./favorite.html">Mis Guifos</a>
                 </div>
             </div>            
         </section>
@@ -65,7 +65,7 @@
     <nav class="searcher" id="searcher">
         
         <section class="container-top-main-bar">
-            <header class="top-main-bar day-bar top-search-bar"><p>Buscar</p></header>
+            <header class="top-main-bar day-bar top-search-bar" id="day-bar-2"><p>Buscar</p></header>
             <div class="container-searcher">
                 <input id="search" class="search" type="text" placeholder="Busca gifs, hashtags, temas, busca lo que quieras…"/>
                 <button type="button" class="search-button day-search-button-inactive" id="search-button">
@@ -88,43 +88,43 @@
         <header class="title-bar">Hoy te sugerimos:</header>
         <figure class="container-suggestions">
             <div class="card">
-                <div class="top-card-bar day-bar">
+                <div class="top-card-bar day-bar" id="day-bar-3">
                     <p id="suggest-hashtag1">#nombre_gif1</p>
                     <img src="./assets/close.svg" class="close" alt="cerrar">
                 </div>
                 <div class="card-image">
                     <img id="suggest1" src="" alt="">
-                    <div class="see-more day-see"><p>Ver más...</p></div>
+                    <div class="see-more day-see" id="day-see-1"><p>Ver más...</p></div>
                 </div>
             </div>
             <div class="card">
-                <div class="top-card-bar day-bar">
+                <div class="top-card-bar day-bar" id="day-bar-4">
                     <p id="suggest-hashtag2">#nombre_gif2</p>
                     <img src="./assets/close.svg" class="close" alt="cerrar">
                 </div>
                 <div class="card-image">
                     <img id="suggest2" src="" alt="">
-                    <div class="see-more day-see"><p>Ver más...</p></div>
+                    <div class="see-more day-see" id="day-see-2"><p>Ver más...</p></div>
                 </div>
             </div>
             <div class="card">
-                <div class="top-card-bar day-bar">
+                <div class="top-card-bar day-bar" id="day-bar-5">
                     <p id="suggest-hashtag3">#nombre_gif3</p>
                     <img src="./assets/close.svg" class="close" alt="cerrar">
                 </div>
                 <div class="card-image">
                     <img id="suggest3" src="" alt="">
-                    <div class="see-more day-see"><p>Ver más...</p></div>
+                    <div class="see-more day-see" id="day-see-3"><p>Ver más...</p></div>
                 </div>
             </div>
             <div class="card">
-                <div class="top-card-bar day-bar">
+                <div class="top-card-bar day-bar" id="day-bar-6">
                     <p id="suggest-hashtag4">#nombre_gif4</p>
                     <img src="./assets/close.svg" class="close" alt="cerrar">
                 </div>
                 <div class="card-image">
                     <img id="suggest4" src="" alt="">
-                    <div class="see-more day-see"><p>Ver más...</p></div>
+                    <div class="see-more day-see" id="day-see-4"><p>Ver más...</p></div>
                 </div>
             </div>
         </figure>
@@ -140,12 +140,11 @@
     </section>
     
     <!-- Javascript -->
-    <script src="./scripts/jquery.js"></script>
+    <!-- <script src="./scripts/jquery.js"></script> -->
     <script src="./scripts/historial.js"></script>
     <script src="./scripts/variables.js"></script>
     <script src="./scripts/input.js"></script>
     <script src="./scripts/cards.js"></script>
     <script src="./scripts/theme.js"></script>
-    <script src="./scripts/video.js"></script>
 </body>
 </html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Metas -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Joan González">
+    <meta name="description" content="This page is for create gifs and save them">
+    
+    <!-- Link -->
+    <link rel="stylesheet" href="./index.html">
+    <link rel="stylesheet" href="./styles/styles.css"/>
+    <link rel="stylesheet" href="normalize.css">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&display=swap" rel="stylesheet"/>
+
+    <title>Create Gif</title>
+</head>
+<body class="day-background" id="day-background">
+    
+    <header>
+        <div class="top-main-bar day-bar" id="day-bar-1">
+            <p>¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número de visitas: <span>12.765.803</span></p>
+        </div>
+
+        <section class="logo-box">
+            <a href="index.html">
+                <img src="./assets/arrow.svg" alt="flecha de regreso" class="arrow">
+                <img id="logo-home" class="logo-create-gif" src="./assets/gifOF_logo.png" alt="logo con el texto gif.os"/>
+            </a>
+        </section>
+    </header>
+    
+    <main class="creator-box">
+
+        <section class="main-create-box" id="main-create-box">
+            <div class="day-bar main-creator-bar" id="day-bar-2">
+                <p>Crear Guifos</p>
+            </div>
+
+            <div class="title-creator">
+                <img src="./assets/window img.png" alt="imagen pequeña de una ventana de windows">
+                <p>Aquí podrás crear tus propios guifos</p>
+            </div>
+
+            <div class="info-creator">
+                Crear tu <span class="chakra-bold ital oneA">guifo</span> es muy fácil, graba cualquier imagen con tu cámara y obtén guifos personalizados. Los pasos para crear tu guifo son: <br><br>
+                <span class="chakra-bold oneA">1)</span> Dar permisos de acceso a la cámara (sólo por el tiempo de uso)<br><br>
+                <span class="chakra-bold oneA">2)</span> Capturar tu momento guifo<br><br>
+                <span class="chakra-bold oneA">3)</span> Revisar el momento<br><br>
+                <span class="chakra-bold oneA">4)</span> Listo para subir y compartir!<br><br>
+                ¿Quieres comenzar a crear tu <span class="chakra-bold ital oneA">guifo</span> ahora?
+            </div>
+
+            <div class="main-create-buttons">
+                <button type="button" class="button cancelar" id="cancelar">
+                    Cancelar
+                </button>
+                <button type="button" class="button day-button day-font comenzar" id="comenzar">
+                    Comenzar
+                </button>
+            </div>
+        </section>
+
+        <!-- Sección Upload -->
+        <section class="before-start-box" id="before-start-box">
+            <!-- barra top con close -->
+            <div class="day-bar top-creator-bar" id="day-bar-3">
+                <p>Un Chequeo Antes de Empezar</p>
+                <img src="./assets/close.svg" class="close" alt="cerrar">
+            </div>
+            <!-- video recorder -->
+            <div class="video-container">
+                <video src="" class="recorder" id="recorder">
+
+                </video>
+            </div>
+            <!-- botones para captura -->
+            <div class="container-capture">
+                <button class="camera-button button day-button day-font" id="camera-button">
+                    <img src="./assets/camera.svg" id="camera" alt="ícono de una cámara">
+                </button>
+                <button type="button" class="capture-button button day-button day-font" id="capture-button">
+                    Capturar
+                </button>
+            </div>
+        </section>
+
+    </main>
+    
+    
+    
+    
+
+    <!-- Javascript -->
+    <script src="./scripts/variables.js"></script>
+    <script src="./scripts/keeptheme.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/RecordRTC/5.5.6/RecordRTC.js" type="text/javascript"></script>
+    <script src="./scripts/video.js"></script>
+    
+</body>
+</html>

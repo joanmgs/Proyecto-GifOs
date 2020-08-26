@@ -67,7 +67,6 @@ function cardGenerator(numberOfCards){
     trendCardDiv.classList.add("trend-card");
     trendGIfImg.id = `trend-gif${numberOfCards+1}`;
     trendHoverDiv.classList.add('trend-hover');
-    // dayTagContainerDiv.classList.add(`day-tag-container`);
     dayTagContainerDiv.id = `day-tag-container-${numberOfCards+1}`;
     tagsHoverP.classList.add('tags-hover');
 

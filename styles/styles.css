@@ -204,27 +204,6 @@
   height: 16px;
 }
 
-.container-capture {
-  height: 36px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.camera-button {
-  width: 36px;
-  height: 36px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
 .button-historial {
   width: auto;
   padding: 8px 7px;
@@ -743,5 +722,348 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.chakra-bold {
+  font-weight: 700;
+}
+
+.ital {
+  font-style: italic;
+}
+
+.oneA {
+  color: #00001A;
+}
+
+.logo-box {
+  height: 187px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.logo-box a {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 4.2%;
+  margin-top: 3.82%;
+}
+
+.logo-box a .arrow {
+  height: 24px;
+  width: 24px;
+}
+
+.logo-box a .logo-create-gif {
+  height: 64px;
+  margin-left: 7px;
+}
+
+.creator-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.creator-box .main-create-box {
+  width: 47.5%;
+  height: 386px;
+  background: #E6E6E6;
+  -webkit-box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+          box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+}
+
+.creator-box .main-create-box .main-creator-bar {
+  width: 99.12%;
+  height: 24px;
+  margin: 3px 0px 30px 0.44%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.creator-box .main-create-box .main-creator-bar p {
+  margin-left: 4px;
+  font-weight: 700;
+  font-size: 14px;
+  color: #FFFFFF;
+  letter-spacing: 0;
+}
+
+.creator-box .main-create-box .title-creator {
+  height: 39px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 3.65%;
+}
+
+.creator-box .main-create-box .title-creator img {
+  width: 32px;
+  height: 32px;
+  margin-right: 16px;
+}
+
+.creator-box .main-create-box .title-creator p {
+  font-weight: 700;
+  font-size: 16px;
+  color: #110038;
+  letter-spacing: 0;
+  line-height: 22px;
+}
+
+.creator-box .main-create-box .info-creator {
+  width: 75.73%;
+  height: 190px;
+  margin-left: 10.67%;
+  margin-bottom: 28px;
+  overflow: auto;
+}
+
+.creator-box .main-create-box .main-create-buttons {
+  width: 44.44%;
+  margin-left: 50.3%;
+}
+
+.creator-box .main-create-box .main-create-buttons .cancelar {
+  width: 47.36%;
+  height: 36px;
+  margin-right: 2.34%;
+  font-size: 16px;
+  text-align: center;
+  line-height: 18px;
+  background: #FFF4FD;
+  border: 1px solid #110038;
+  -webkit-box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+          box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+}
+
+.creator-box .main-create-box .main-create-buttons .comenzar {
+  width: 47.36%;
+  height: 36px;
+  font-size: 16px;
+  text-align: center;
+  line-height: 18px;
+}
+
+.creator-box .before-start-box {
+  width: 59.72%;
+  height: 548px;
+  display: none;
+  background: #E6E6E6;
+  -webkit-box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+          box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+}
+
+.creator-box .before-start-box .top-creator-bar {
+  width: 99.3%;
+  height: 24px;
+  margin: 3px 0px 11px 0.35%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.creator-box .before-start-box .top-creator-bar p {
+  margin-left: 4px;
+  font-weight: 700;
+  font-size: 14px;
+  color: #FFFFFF;
+  letter-spacing: 0;
+}
+
+.creator-box .before-start-box .top-creator-bar img {
+  margin-right: 10px;
+}
+
+.creator-box .before-start-box .video-container {
+  height: 434px;
+  width: 96.74%;
+  margin-bottom: 24px;
+  margin-left: 1.28%;
+  border: 1px solid #979797;
+  -webkit-box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+          box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+}
+
+.creator-box .before-start-box .video-container .recorder {
+  height: 100%;
+  width: 100%;
+}
+
+.creator-box .before-start-box .container-capture {
+  width: 20.93%;
+  height: 36px;
+  margin-left: 77.1%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.creator-box .before-start-box .container-capture .camera-button {
+  width: 25%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.creator-box .before-start-box .container-capture .capture-button {
+  width: 75%;
+  height: 100%;
+}
+
+.creator-box .preview {
+  width: 59.72%;
+  height: 548px;
+  display: none;
+  background: #E6E6E6;
+  -webkit-box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+          box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+}
+
+.creator-box .preview .top-preview-bar {
+  width: 99.3%;
+  height: 24px;
+  margin: 3px 0px 11px 0.35%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.creator-box .preview .top-preview-bar p {
+  margin-left: 4px;
+  font-weight: 700;
+  font-size: 14px;
+  color: #FFFFFF;
+  letter-spacing: 0;
+}
+
+.creator-box .preview .preview-container {
+  height: 434px;
+  width: 96.74%;
+  margin-bottom: 24px;
+  margin-left: 1.28%;
+  border: 1px solid #979797;
+  -webkit-box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+          box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+}
+
+.creator-box .preview .preview-container .preview-gif {
+  height: 100%;
+}
+
+.creator-box .uploading {
+  width: 59.72%;
+  height: 548px;
+  display: none;
+  background: #E6E6E6;
+  -webkit-box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+          box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+}
+
+.creator-box .uploading .top-uploading-bar {
+  width: 99.3%;
+  height: 24px;
+  margin: 3px 0px 11px 0.35%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.creator-box .uploading .top-uploading-bar p {
+  margin-left: 4px;
+  font-weight: 700;
+  font-size: 14px;
+  color: #FFFFFF;
+  letter-spacing: 0;
+}
+
+.creator-box .uploading .preview-container {
+  height: 434px;
+  width: 96.74%;
+  margin-bottom: 24px;
+  margin-left: 1.28%;
+  background: #FFFFFF;
+  border: 1px solid #979797;
+  -webkit-box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+          box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+}
+
+.creator-box .main-create-box {
+  width: 47.5%;
+  height: 386px;
+  background: #E6E6E6;
+  -webkit-box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+          box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+}
+
+.creator-box .main-create-box .main-creator-bar {
+  width: 99.12%;
+  height: 24px;
+  margin: 3px 0px 30px 0.44%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.creator-box .main-create-box .main-creator-bar p {
+  margin-left: 4px;
+  font-weight: 700;
+  font-size: 14px;
+  color: #FFFFFF;
+  letter-spacing: 0;
+}
+
+.creator-box .main-create-box .main-creator-bar img {
+  margin-right: 10px;
 }
 /*# sourceMappingURL=styles.css.map */

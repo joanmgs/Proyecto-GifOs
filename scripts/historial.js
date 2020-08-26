@@ -10,6 +10,15 @@ searcherSection.appendChild(divHistorial);
 function historialDivBelow(inputTextValue){
     let divButtonHistorial = document.createElement('div');
     divButtonHistorial.classList.add('button-historial');
+
+    if(!nightTheme){
+        divButtonHistorial.classList.add('day-see');
+        divButtonHistorial.classList.remove('night-see');
+    }else{
+        divButtonHistorial.classList.add('night-see');
+        divButtonHistorial.classList.remove('day-see');
+    };
+
     let p = document.createElement('p');
     divButtonHistorial.appendChild(p);
     p.innerHTML = `#${inputTextValue}`;
@@ -27,7 +36,7 @@ function historialDivBelow(inputTextValue){
         numbOfDivs[4].remove();
     };
     //permite hacer click al botón de historial guardado para buscarlo nuevamente
-    divButtonHistorial.addEventListener('click', function(){
+    divButtonHistorial.addEventListener('click', () => {
         inputText.value = inputTextValue;
         window.scroll(0, topLocationTrending);
         //true permite indicar que el evento ocurrió
@@ -39,10 +48,26 @@ window.addEventListener('beforeunload', ()=>{
     //convierte en string el array de storageHistorial
     const stringifyHistorial = JSON.stringify(storageHistorial);
     //guarda en el localStorage el string
-    localStorage.setItem('historial',stringifyHistorial);    
+    localStorage.setItem('historial',stringifyHistorial);
+    //guarda el theme que haya escogido el usuario
+    const stringifyNightTheme = JSON.stringify(nightTheme);
+    //lo guardo en el localStorage
+    localStorage.setItem('theme',stringifyNightTheme);
 });
 //Guarda el historial antes de la actualización de la página en el localStorage
 window.addEventListener('load', ()=>{
+    //parseo el string de nightTheme
+    nightTheme = JSON.parse(localStorage.getItem('theme'));
+    //condiciono para activar el evento que dejo el usuario guardado
+    if(!nightTheme){
+        // divButtonHistorial.classList.add('day-see');
+        // divButtonHistorial.classList.remove('night-see');
+        sailorDayButon.click();
+    }else{
+        // divButtonHistorial.classList.add('night-see');
+        // divButtonHistorial.classList.remove('day-see');
+        sailorNightButon.click();
+    };
     //parsea el string, convirtiendolo en array nuevamente
     storageHistorial = JSON.parse(localStorage.getItem('historial'));
     //si la página se recargo y no hay nada, no se crea el historial nuevamente
@@ -54,6 +79,13 @@ window.addEventListener('load', ()=>{
             divButtonHistorial.appendChild(p);
             p.innerHTML = `#${storageHistorial[i]}`;
             divHistorial.prepend(divButtonHistorial);
+            //permite hacer click al botón de historial guardado para buscarlo nuevamente
+            divButtonHistorial.addEventListener('click', () => {
+                inputText.value = storageHistorial[i];
+                window.scroll(0, topLocationTrending);
+                //true permite indicar que el evento ocurrió
+                searching(true);
+            });
         };
     };
 });
