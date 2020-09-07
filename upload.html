@@ -33,7 +33,7 @@
     </header>
     
     <main class="creator-box">
-
+        <!-- Main Creator Section -->
         <section class="main-create-box" id="main-create-box">
             <div class="day-bar main-creator-bar" id="day-bar-2">
                 <p>Crear Guifos</p>
@@ -54,21 +54,21 @@
             </div>
 
             <div class="main-create-buttons">
-                <button type="button" class="button cancelar" id="cancelar">
+                <button type="button" class="button cancelar pointer-cursor" id="cancelar">
                     Cancelar
                 </button>
-                <button type="button" class="button day-button day-font comenzar" id="comenzar">
+                <button type="button" class="button day-button day-font comenzar pointer-cursor" id="comenzar">
                     Comenzar
                 </button>
             </div>
         </section>
 
-        <!-- Sección Upload -->
+        <!-- Before start Section -->
         <section class="before-start-box" id="before-start-box">
             <!-- barra top con close -->
             <div class="day-bar top-creator-bar" id="day-bar-3">
                 <p>Un Chequeo Antes de Empezar</p>
-                <img src="./assets/close.svg" class="close" alt="cerrar">
+                <img src="./assets/close.svg" class="pointer-cursor" id="close-before-start-box" class="close" alt="cerrar">
             </div>
             <!-- video recorder -->
             <div class="video-container">
@@ -78,15 +78,95 @@
             </div>
             <!-- botones para captura -->
             <div class="container-capture">
-                <button class="camera-button button day-button day-font" id="camera-button">
+                <button class="camera-button button day-button day-font pointer-cursor" id="camera-button">
                     <img src="./assets/camera.svg" id="camera" alt="ícono de una cámara">
                 </button>
-                <button type="button" class="capture-button button day-button day-font" id="capture-button">
+                <button type="button" class="capture-button button day-button day-font pointer-cursor" id="capture-button">
                     Capturar
                 </button>
             </div>
         </section>
-
+        <!-- Preview Section -->
+        <section class="preview" id="preview"
+            <!-- barra preview -->
+            <div class="day-bar top-preview-bar" id="day-bar-4">
+                <p>Vista Previa</p>
+            </div>
+            <!-- gif preview -->
+            <div class="preview-container">
+                <img src="" class="preview-gif" id="preview-gif" alt="gif obtenido después de la grabación">
+            </div>
+            <!-- timer and controls -->
+            <section class="timer-controls">
+                <!-- preview timer -->
+                <div class="preview-timer">
+                    <div class="timer-recording">
+                        <!-- hacer con JS el 00:00:00:00 -->
+                        00:00:00:00
+                    </div>
+                    <div class="container-forward-arrow day-button pointer-cursor">
+                        <img src="./assets/forward.svg" id="forward-arrow" alt="botón de play para ver el gif creado">
+                    </div>
+                    <div class="progress-bar">
+                    </div>
+                </div>
+                <!-- botones de control -->
+                <div class="preview-buttons">
+                    <button type="button" class="button  repetir-captura pointer-cursor" id="repetir-captura">
+                        Repetir Captura
+                    </button>
+                    <button type="button" class="button day-button day-font subir-guifo pointer-cursor" id="subir-guifo">
+                        Subir Guifo
+                    </button>
+                </div>
+            </section>
+        </section>
+        <!-- Uploading Section -->
+        <section class="uploading" id="uploading">
+            <!-- barra uploading con close -->
+            <div class="day-bar top-uploading-bar" id="day-bar-5">
+                <p>Subiendo Guifo</p>
+                <img src="./assets/close.svg" class="pointer-cursor" id="close-upload-box" class="close" alt="cerrar">
+            </div>
+            <!-- upload image -->
+            <div class="upload-container">
+                <img src="./assets/globe_img.png" class="globe-img" id="globe-img" alt="imagen de un globo terraqueo">
+                <p class="first-upload-text">Estamos subiendo tu guifo…</p>
+                <div class="upload-bar-progress"></div>
+                <p class="second-upload-text">Tiempo restante: 38 años algunos minutos</p>
+            </div>
+            <!-- Botón cancelar -->
+            <button type="button" class="cancel-upload button pointer-cursor" id="cancel-upload">
+                Cancelar
+            </button>
+        </section>
+        <!-- Successful section -->
+        <section class="success-create-box" id="success-create-box">
+            <!-- barra preview -->
+            <div class="day-bar success-creator-bar" id="day-bar-6">
+                <p>Guifo Subido Con Éxito</p>
+                <img src="./assets/close.svg" class="pointer-cursor" id="close-success-creator-box" class="close" alt="cerrar">
+            </div>
+            <!-- Success content -->
+            <section class="success-content">
+                <div class="mini-preview-container">
+                    <img src="" class="preview-mini-gif" alt="preview del gif subido">
+                </div>
+                <div class="success-options">
+                    <p>Guifo creado con éxito</p>
+                    <button class="success-button" id="copy-link-button">
+                        Copiar Enlace Guifo
+                    </button>
+                    <button class="success-button" id="download-guifo">
+                        Descargar Guifo
+                    </button>
+                </div>
+            </section>
+            <!-- Botón de listo -->
+            <button class="listo-button button day-button day-font" id="listo">
+                Listo
+            </button>
+        </section>
     </main>
     
     

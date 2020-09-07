@@ -5,6 +5,9 @@
     font-style: italic
 .oneA
     color: #00001A
+//cursor
+.pointer-cursor
+    cursor: pointer
 // Top section
 .logo-box
     height: 187px
@@ -26,10 +29,11 @@
 .creator-box
     display: flex
     justify-content: center
+    align-items: center
     flex-direction: column
-    //Main creator
+    //Main creator Section
     .main-create-box
-        width: 47.5%
+        width: 62.5%
         height: 386px
         background: #E6E6E6
         box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF
@@ -61,7 +65,7 @@
                 line-height: 22px
         .info-creator
             width: 75.73%
-            height: 190px
+            height: 218px
             margin-left: 10.67%
             margin-bottom: 28px
             overflow: auto
@@ -84,7 +88,7 @@
                 font-size: 16px
                 text-align: center
                 line-height: 18px
-    //Before start
+    //Before start Section
     .before-start-box
         width: 59.72%
         height: 548px
@@ -130,8 +134,7 @@
             .capture-button
                 width: 75%
                 height: 100%
-    //Preview
-    //!falta hacerlo en html
+    //Preview Section
     .preview
         width: 59.72%
         height: 548px
@@ -158,8 +161,71 @@
             margin-left: 1.28%
             border: 1px solid #979797
             box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000
+            display: flex
+            justify-content: center
+            align-items: center
             .preview-gif
+                width: 100%
                 height: 100%
+        .timer-controls
+            display: flex
+            justify-content: space-between
+            align-items: center
+            .preview-timer
+                width: 47.44%
+                height: 36px
+                margin-left: 1.27%
+                display: flex
+                align-items: center
+                .timer-recording
+                    height: 36px
+                    width: 30.39%
+                    background: #FFFFFF
+                    border: 1px solid #979797
+                    box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000
+                    font-size: 16px
+                    color: #110038
+                    letter-spacing: 0
+                    line-height: 22px
+                    display: flex
+                    align-items: center
+                    justify-content: center
+                .container-forward-arrow
+                    height: 20px
+                    width: 20px
+                    margin-left: 24px
+                    display: flex
+                    align-items: center
+                    justify-content: center
+                    border: 1px solid #110038
+                .progress-bar
+                    width: 58.82%
+                    height: 24px
+                    background: #B4B4B4
+                    box-shadow: inset 2px 2px 0 0 #FFFCFC, inset -2px -2px 0 0 #000000
+            .preview-buttons
+                width: 44.44%
+                display: flex
+                justify-content: space-between
+                margin-right: 1.86%
+                .repetir-captura
+                    width: 47.36%
+                    height: 36px
+                    margin-right: 5%
+                    font-size: 16px
+                    text-align: center
+                    line-height: 18px
+                    background: #FFF4FD
+                    border: 1px solid #110038
+                    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF
+                .subir-guifo
+                    width: 47.36%
+                    height: 36px
+                    font-size: 16px
+                    text-align: center
+                    line-height: 18px
+
+
 
     //Uploading gif
     .uploading
@@ -181,27 +247,66 @@
                 font-size: 14px
                 color: #FFFFFF
                 letter-spacing: 0
-        .preview-container
-            height: 434px
-            width: 96.74%
-            margin-bottom: 24px
-            margin-left: 1.28%
+            img
+                margin-right: 10px
+        .upload-container
+            height: 440px
+            width: 97.44%
+            margin-bottom: 21px
+            margin-left: 0.93%
             background: #FFFFFF
             border: 1px solid #979797
             box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000
+            display: flex
+            flex-direction: column
+            justify-content: center
+            align-items: center
+            .globe-img
+                height: 48px
+                margin-bottom: 8px
+            .first-upload-text
+                width: 30%
+                margin-bottom: 39px
+                font-weight: 700
+                font-size: 16px
+                color: #110038
+                letter-spacing: 0
+                text-align: center
+                line-height: 22px
+            .upload-bar-progress
+                margin-bottom: 8px
+                width: 50%
+                height: 24px
+                background: #B4B4B4
+                box-shadow: inset 2px 2px 0 0 #FFFCFC, inset -2px -2px 0 0 #000000
+            .second-upload-text
+                font-size: 12px
+                color: rgba(17,0,56,0.64)
+                letter-spacing: 0
+                text-align: center
+                line-height: 14px
+        .cancel-upload
+            width: 16.74%
+            height: 36px
+            margin-left: 81.63%
+            background: #FFF4FD
+            border: 1px solid #110038
+            box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF
 
-    //Succes upload
-    .main-create-box
+    //Success upload
+    .success-create-box
         width: 47.5%
         height: 386px
+        display: none
         background: #E6E6E6
         box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF
-        .main-creator-bar
+        .success-creator-bar
             width: 99.12%
             height: 24px
             margin: 3px 0px 30px 0.44%
             display: flex
             align-items: center
+            justify-content: space-between
             p
                 margin-left: 4px
                 font-weight: 700
@@ -210,3 +315,50 @@
                 letter-spacing: 0
             img
                 margin-right: 10px
+        .success-content
+            height: 196px
+            width: 100%
+            margin-bottom: 61px
+            display: flex
+            justify-content: center
+            .mini-preview-container
+                height: 100%
+                width: 51.45%
+                margin-right: 3.33%
+                background: #FFFFFF
+                border: 1px solid #979797
+                box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000
+                display: flex
+                justify-content: center
+                align-items: center
+                .preview-mini-gif
+                    margin: 2px 3px
+            .success-options
+                height: 196px
+                width: 38.84%
+                display: flex
+                flex-direction: column
+                justify-content: center
+                p
+                    font-weight: 700
+                    font-size: 16px
+                    color: #110038
+                    letter-spacing: 0
+                    line-height: 22px
+                .success-button
+                    width: 100%
+                    height: 36px
+                    margin-top: 14px
+                    background: #FFF4FD
+                    border: 1px solid #110038
+                    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF
+                    font-size: 16px
+                    color: #110038
+                    letter-spacing: 0
+                    text-align: center
+                    line-height: 18px
+                    &:nth-child(2)
+                        margin-top: 16px                
+        .listo-button
+            width: 20%
+            margin-left: 73.65%

@@ -183,6 +183,9 @@ async function searching(comeFromHistorial){
             const hashtag2 = dataRelatedTag.data[2].name;
 
             tags[i].innerHTML = `#${hashtag0} #${hashtag1} #${hashtag2}`;
+
+            //!setear los temas aquí.
+
         }else{
             tags[i].innerHTML = `#${inputText.value}`;
         };

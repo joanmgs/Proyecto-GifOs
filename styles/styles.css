@@ -736,6 +736,10 @@
   color: #00001A;
 }
 
+.pointer-cursor {
+  cursor: pointer;
+}
+
 .logo-box {
   height: 187px;
   display: -webkit-box;
@@ -777,6 +781,9 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -784,7 +791,7 @@
 }
 
 .creator-box .main-create-box {
-  width: 47.5%;
+  width: 62.5%;
   height: 386px;
   background: #E6E6E6;
   -webkit-box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
@@ -835,7 +842,7 @@
 
 .creator-box .main-create-box .info-creator {
   width: 75.73%;
-  height: 190px;
+  height: 218px;
   margin-left: 10.67%;
   margin-bottom: 28px;
   overflow: auto;
@@ -986,10 +993,122 @@
   border: 1px solid #979797;
   -webkit-box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
           box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .creator-box .preview .preview-container .preview-gif {
+  width: 100%;
   height: 100%;
+}
+
+.creator-box .preview .timer-controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.creator-box .preview .timer-controls .preview-timer {
+  width: 47.44%;
+  height: 36px;
+  margin-left: 1.27%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.creator-box .preview .timer-controls .preview-timer .timer-recording {
+  height: 36px;
+  width: 30.39%;
+  background: #FFFFFF;
+  border: 1px solid #979797;
+  -webkit-box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+          box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+  font-size: 16px;
+  color: #110038;
+  letter-spacing: 0;
+  line-height: 22px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.creator-box .preview .timer-controls .preview-timer .container-forward-arrow {
+  height: 20px;
+  width: 20px;
+  margin-left: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border: 1px solid #110038;
+}
+
+.creator-box .preview .timer-controls .preview-timer .progress-bar {
+  width: 58.82%;
+  height: 24px;
+  background: #B4B4B4;
+  -webkit-box-shadow: inset 2px 2px 0 0 #FFFCFC, inset -2px -2px 0 0 #000000;
+          box-shadow: inset 2px 2px 0 0 #FFFCFC, inset -2px -2px 0 0 #000000;
+}
+
+.creator-box .preview .timer-controls .preview-buttons {
+  width: 44.44%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-right: 1.86%;
+}
+
+.creator-box .preview .timer-controls .preview-buttons .repetir-captura {
+  width: 47.36%;
+  height: 36px;
+  margin-right: 5%;
+  font-size: 16px;
+  text-align: center;
+  line-height: 18px;
+  background: #FFF4FD;
+  border: 1px solid #110038;
+  -webkit-box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+          box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+}
+
+.creator-box .preview .timer-controls .preview-buttons .subir-guifo {
+  width: 47.36%;
+  height: 36px;
+  font-size: 16px;
+  text-align: center;
+  line-height: 18px;
 }
 
 .creator-box .uploading {
@@ -1024,26 +1143,87 @@
   letter-spacing: 0;
 }
 
-.creator-box .uploading .preview-container {
-  height: 434px;
-  width: 96.74%;
-  margin-bottom: 24px;
-  margin-left: 1.28%;
+.creator-box .uploading .top-uploading-bar img {
+  margin-right: 10px;
+}
+
+.creator-box .uploading .upload-container {
+  height: 440px;
+  width: 97.44%;
+  margin-bottom: 21px;
+  margin-left: 0.93%;
   background: #FFFFFF;
   border: 1px solid #979797;
   -webkit-box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
           box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.creator-box .main-create-box {
+.creator-box .uploading .upload-container .globe-img {
+  height: 48px;
+  margin-bottom: 8px;
+}
+
+.creator-box .uploading .upload-container .first-upload-text {
+  width: 30%;
+  margin-bottom: 39px;
+  font-weight: 700;
+  font-size: 16px;
+  color: #110038;
+  letter-spacing: 0;
+  text-align: center;
+  line-height: 22px;
+}
+
+.creator-box .uploading .upload-container .upload-bar-progress {
+  margin-bottom: 8px;
+  width: 50%;
+  height: 24px;
+  background: #B4B4B4;
+  -webkit-box-shadow: inset 2px 2px 0 0 #FFFCFC, inset -2px -2px 0 0 #000000;
+          box-shadow: inset 2px 2px 0 0 #FFFCFC, inset -2px -2px 0 0 #000000;
+}
+
+.creator-box .uploading .upload-container .second-upload-text {
+  font-size: 12px;
+  color: rgba(17, 0, 56, 0.64);
+  letter-spacing: 0;
+  text-align: center;
+  line-height: 14px;
+}
+
+.creator-box .uploading .cancel-upload {
+  width: 16.74%;
+  height: 36px;
+  margin-left: 81.63%;
+  background: #FFF4FD;
+  border: 1px solid #110038;
+  -webkit-box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+          box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+}
+
+.creator-box .success-create-box {
   width: 47.5%;
   height: 386px;
+  display: none;
   background: #E6E6E6;
   -webkit-box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
           box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
 }
 
-.creator-box .main-create-box .main-creator-bar {
+.creator-box .success-create-box .success-creator-bar {
   width: 99.12%;
   height: 24px;
   margin: 3px 0px 30px 0.44%;
@@ -1053,9 +1233,12 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-.creator-box .main-create-box .main-creator-bar p {
+.creator-box .success-create-box .success-creator-bar p {
   margin-left: 4px;
   font-weight: 700;
   font-size: 14px;
@@ -1063,7 +1246,89 @@
   letter-spacing: 0;
 }
 
-.creator-box .main-create-box .main-creator-bar img {
+.creator-box .success-create-box .success-creator-bar img {
   margin-right: 10px;
+}
+
+.creator-box .success-create-box .success-content {
+  height: 196px;
+  width: 100%;
+  margin-bottom: 61px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.creator-box .success-create-box .success-content .mini-preview-container {
+  height: 100%;
+  width: 51.45%;
+  margin-right: 3.33%;
+  background: #FFFFFF;
+  border: 1px solid #979797;
+  -webkit-box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+          box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.creator-box .success-create-box .success-content .mini-preview-container .preview-mini-gif {
+  margin: 2px 3px;
+}
+
+.creator-box .success-create-box .success-content .success-options {
+  height: 196px;
+  width: 38.84%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.creator-box .success-create-box .success-content .success-options p {
+  font-weight: 700;
+  font-size: 16px;
+  color: #110038;
+  letter-spacing: 0;
+  line-height: 22px;
+}
+
+.creator-box .success-create-box .success-content .success-options .success-button {
+  width: 100%;
+  height: 36px;
+  margin-top: 14px;
+  background: #FFF4FD;
+  border: 1px solid #110038;
+  -webkit-box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+          box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+  font-size: 16px;
+  color: #110038;
+  letter-spacing: 0;
+  text-align: center;
+  line-height: 18px;
+}
+
+.creator-box .success-create-box .success-content .success-options .success-button:nth-child(2) {
+  margin-top: 16px;
+}
+
+.creator-box .success-create-box .listo-button {
+  width: 20%;
+  margin-left: 73.65%;
 }
 /*# sourceMappingURL=styles.css.map */
