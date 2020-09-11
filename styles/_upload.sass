@@ -35,6 +35,7 @@
     .main-create-box
         width: 62.5%
         height: 386px
+        margin-bottom: 153px
         background: #E6E6E6
         box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF
         .main-creator-bar
@@ -118,8 +119,9 @@
             border: 1px solid #979797
             box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000
             .recorder
-                height: 100%
+                object-fit: cover
                 width: 100%
+                height: 100%
         .container-capture
             width: 20.93%
             height: 36px
@@ -165,6 +167,7 @@
             justify-content: center
             align-items: center
             .preview-gif
+                object-fit: cover
                 width: 100%
                 height: 100%
         .timer-controls
@@ -298,6 +301,7 @@
         width: 47.5%
         height: 386px
         display: none
+        margin-bottom: 180px
         background: #E6E6E6
         box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF
         .success-creator-bar
@@ -333,6 +337,9 @@
                 align-items: center
                 .preview-mini-gif
                     margin: 2px 3px
+                    object-fit: cover
+                    height: 100%
+                    width: 100%
             .success-options
                 height: 196px
                 width: 38.84%
@@ -357,6 +364,7 @@
                     letter-spacing: 0
                     text-align: center
                     line-height: 18px
+                    cursor: pointer
                     &:nth-child(2)
                         margin-top: 16px                
         .listo-button

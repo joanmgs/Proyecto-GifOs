@@ -793,6 +793,7 @@
 .creator-box .main-create-box {
   width: 62.5%;
   height: 386px;
+  margin-bottom: 153px;
   background: #E6E6E6;
   -webkit-box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
           box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
@@ -921,8 +922,10 @@
 }
 
 .creator-box .before-start-box .video-container .recorder {
-  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
   width: 100%;
+  height: 100%;
 }
 
 .creator-box .before-start-box .container-capture {
@@ -1005,6 +1008,8 @@
 }
 
 .creator-box .preview .preview-container .preview-gif {
+  -o-object-fit: cover;
+     object-fit: cover;
   width: 100%;
   height: 100%;
 }
@@ -1218,6 +1223,7 @@
   width: 47.5%;
   height: 386px;
   display: none;
+  margin-bottom: 180px;
   background: #E6E6E6;
   -webkit-box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
           box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
@@ -1283,6 +1289,10 @@
 
 .creator-box .success-create-box .success-content .mini-preview-container .preview-mini-gif {
   margin: 2px 3px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+  width: 100%;
 }
 
 .creator-box .success-create-box .success-content .success-options {
@@ -1321,6 +1331,7 @@
   letter-spacing: 0;
   text-align: center;
   line-height: 18px;
+  cursor: pointer;
 }
 
 .creator-box .success-create-box .success-content .success-options .success-button:nth-child(2) {
