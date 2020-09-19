@@ -46,7 +46,6 @@ async function getStreamAndRecord(constraints){
             width: 360,
             hidden: 240,
             onGifRecordingStarted: ()=>{ 
-                console.log('started');
                 recorderVideo.play();
                 captureButton.innerHTML = "Stop";
                 if(nightTheme){
@@ -58,9 +57,6 @@ async function getStreamAndRecord(constraints){
         });
         //inicia la grabación
         recorder.startRecording()
-        // arroja un mensaje para poder descargar el gif
-        // podría usarse con un listener para la descarga
-        //invokeSaveAsDialog(blob);
     }catch(err){
         streaming = false;
         throw new Error(err);
@@ -178,17 +174,15 @@ subirGuifo.addEventListener('click', async ()=>{
         let dataPost = await responsePost.json();
         //asigno la id del gif enviado a una variable
         dataPostId = dataPost.data.id;
+        console.log(dataPostId);
+        //envío el id a la función que llena la galería
+        fillMisGuifosGallery(dataPostId);
         //asigno el gif al mini preview
         previewMiniGif.setAttribute('src',urlBlobPreview);
         //desaparezco uploading y aparezco success
         uploading.style.display = "none";
         successCreateBox.style.display = "block";
 
-        // //!para hacerlo en otra funcion probablemente
-        // let urlGet = `https://api.giphy.com/v1/gifs/${dataPostId}?api_key=${APIKey}`;
-        // let responseGet = await fetch(urlGet);
-        // let dataGet = await responseGet.json();
-        // console.log(dataGet)
     }catch(fail){
         streaming = false;
         captureButton.innerHTML = "Don't work";

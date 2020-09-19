@@ -1,0 +1,25 @@
+.mis-guifos-container
+    width: 100%
+    display: flex
+    align-items: center
+    flex-direction: column
+
+    .mis-guifos-bar
+        width: 83%
+        margin-bottom: 16px
+    .mis-guifos-gallery
+        width: 83%
+        display: grid
+        grid-template: repeat(3, 298px) / repeat(4, 24%)
+        gap: 1.33%
+        div
+            display: flex
+            justify-content: center
+            align-items: center
+            //la quinta celda tendrá dos celdas + un gap de tamaño
+            &:nth-child(5n)
+                grid-column: span 2
+            img
+                object-fit: cover
+                width: 100%
+                height: 100%
