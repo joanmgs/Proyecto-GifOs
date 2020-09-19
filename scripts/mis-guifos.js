@@ -4,11 +4,10 @@ window.addEventListener('beforeunload', ()=>{
     const stringifyNightTheme = JSON.stringify(nightTheme);
     //lo guardo en el localStorage
     localStorage.setItem('theme',stringifyNightTheme);
-    //Mis guifos
-    console.log(arrayGallery)
-    const stringifyGallery = JSON.stringify(arrayGallery);
-    //guarda en el local storage los ids de los gifs creados
-    localStorage.setItem('galeriaDeGuifos', stringifyGallery);
+    // //Mis guifos
+    // const stringifyGallery = JSON.stringify(arrayGallery);
+    // //guarda en el local storage los ids de los gifs creados
+    // localStorage.setItem('galeriaDeGuifos', stringifyGallery);
 });
 //cargar los guifos creados en la galería
 window.addEventListener('load', ()=>{
