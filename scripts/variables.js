@@ -32,6 +32,8 @@ let searchButtonActive = false;
 
 let storageHistorial = []; //array donde se guarda el historial
 
+let arrayGallery = []; //array donde se guardan los id de guifos para subirlos al localstorage
+
 // CreateElements
 
 // let figureInTrend = document.getElementById('figure-in-trend');

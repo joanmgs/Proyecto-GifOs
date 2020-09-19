@@ -5,6 +5,7 @@ window.addEventListener('beforeunload', ()=>{
     //lo guardo en el localStorage
     localStorage.setItem('theme',stringifyNightTheme);
     //Mis guifos
+    console.log(arrayGallery)
     const stringifyGallery = JSON.stringify(arrayGallery);
     //guarda en el local storage los ids de los gifs creados
     localStorage.setItem('galeriaDeGuifos', stringifyGallery);

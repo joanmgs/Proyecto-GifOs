@@ -41,13 +41,12 @@ let dayMisGifos = document.getElementById('day-mis-gifos');
 
 let dayButtonHistorial =[];
 let buttonHistorial = document.getElementsByClassName('button-historial');
-setTimeout(() => {
+// setTimeout(() => {
     for(let i = 0; i<buttonHistorial.length;i++){
         buttonHistorial[i].id =`day-see-historial-${i+1}`;
-        console.log('ENTRO')
         dayButtonHistorial.push(document.getElementById(`day-see-historial-${i+1}`));
     };
-}, 1000);
+// }, 1000);
 
 
 //contiene el div y p de las cards en trending, se llenan en las funciones de cards.js

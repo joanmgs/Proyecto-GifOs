@@ -1,4 +1,3 @@
-let arrayGallery = []; //array donde se guardan los id de guifos para subirlos al localstorage
 //generador de cards para la galería de mis guifos
 let misGuifosGallery = document.getElementById('mis-guifos-gallery');
 function misGuifoscardGenerator(miGuifoUrl){
