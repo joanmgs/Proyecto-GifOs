@@ -29,11 +29,21 @@ function historialDivBelow(inputTextValue){
     if(numbOfDivs.length < 5){
         storageHistorial.push(inputTextValue);
         divHistorial.prepend(divButtonHistorial);
+
+        //convierte en string el array de storageHistorial
+        const stringifyHistorial = JSON.stringify(storageHistorial);
+        //guarda en el localStorage el string
+        localStorage.setItem('historial',stringifyHistorial);
     }else{
         storageHistorial.shift();
         storageHistorial.push(inputTextValue);
         divHistorial.prepend(divButtonHistorial);
         numbOfDivs[4].remove();
+
+        //convierte en string el array de storageHistorial
+        const stringifyHistorial = JSON.stringify(storageHistorial);
+        //guarda en el localStorage el string
+        localStorage.setItem('historial',stringifyHistorial);
     };
     //permite hacer click al botón de historial guardado para buscarlo nuevamente
     divButtonHistorial.addEventListener('click', () => {
@@ -45,10 +55,10 @@ function historialDivBelow(inputTextValue){
 };
 //Guarda el historial antes de la actualización de la página en el localStorage
 window.addEventListener('beforeunload', ()=>{
-    //convierte en string el array de storageHistorial
-    const stringifyHistorial = JSON.stringify(storageHistorial);
-    //guarda en el localStorage el string
-    localStorage.setItem('historial',stringifyHistorial);
+    // //convierte en string el array de storageHistorial
+    // const stringifyHistorial = JSON.stringify(storageHistorial);
+    // //guarda en el localStorage el string
+    // localStorage.setItem('historial',stringifyHistorial);
     //guarda el theme que haya escogido el usuario
     const stringifyNightTheme = JSON.stringify(nightTheme);
     //lo guardo en el localStorage
