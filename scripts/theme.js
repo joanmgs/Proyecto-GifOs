@@ -48,7 +48,6 @@ let buttonHistorial = document.getElementsByClassName('button-historial');
     };
 // }, 1000);
 
-
 //contiene el div y p de las cards en trending, se llenan en las funciones de cards.js
 let switchThemeTagContainer = [];
 //logo
@@ -80,14 +79,16 @@ sailorDayButon.addEventListener('click', ()=>{
 
     dayMisGifos.classList.replace('night-mis-gifos','day-mis-gifos');
 
-    if(searchButtonActive){
+    if(searchButtonActive && searchButton){
         searchButton.classList.replace('night-search-button-active','day-search-button-active');
         imgLupa.setAttribute('src','./assets/lupa.svg');
         imgLupa.style.opacity = "1";
     }else{
-        searchButton.classList.replace('night-search-button-inactive','day-search-button-inactive');
-        imgLupa.setAttribute('src','./assets/lupa.svg');
-        imgLupa.style.opacity = "0.2";
+        if(searchButton){
+            searchButton.classList.replace('night-search-button-inactive','day-search-button-inactive');
+            imgLupa.setAttribute('src','./assets/lupa.svg');
+            imgLupa.style.opacity = "0.2";
+        };
     };
 
     for(let item of dayButtonHistorial){
@@ -126,14 +127,16 @@ sailorNightButon.addEventListener('click', ()=>{
 
     dayMisGifos.classList.replace('day-mis-gifos','night-mis-gifos');
 
-    if(searchButtonActive){
+    if(searchButtonActive && searchButton){
         searchButton.classList.replace('day-search-button-active','night-search-button-active');
         imgLupa.setAttribute('src','./assets/lupa_light.svg');
         imgLupa.style.opacity = "1";
     }else{
-        searchButton.classList.replace('day-search-button-inactive','night-search-button-inactive');
-        imgLupa.setAttribute('src','./assets/Combined_Shape.svg');
-        imgLupa.style.opacity = "1"
+        if(searchButton){
+            searchButton.classList.replace('day-search-button-inactive','night-search-button-inactive');
+            imgLupa.setAttribute('src','./assets/Combined_Shape.svg');
+            imgLupa.style.opacity = "1";
+        };
     };
 
     for(let item of dayButtonHistorial){

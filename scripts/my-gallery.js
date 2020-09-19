@@ -22,6 +22,10 @@ async function fillMisGuifosGallery(miGuifoId){
     let dataGallery = await responseGallery.json();
     //envío la dirección al generador de cards
     misGuifoscardGenerator(dataGallery.data.images.original.url);
+    //Agrego al localstorage
+    const stringifyGallery = JSON.stringify(arrayGallery);
+    //guarda en el local storage los ids de los gifs creados
+    localStorage.setItem('galeriaDeGuifos', stringifyGallery);
 };
 //cargar los guifos creados
 async function loadMisGuifos(){
@@ -33,19 +37,14 @@ async function loadMisGuifos(){
         misGuifoscardGenerator(dataLoad.data.images.original.url)
     };
 };
-//guardar los guifos creados en un json
-window.addEventListener('beforeunload', ()=>{
-    //Mis guifos
-    const stringifyGallery = JSON.stringify(arrayGallery);
-    //guarda en el local storage los ids de los gifs creados
-    localStorage.setItem('galeriaDeGuifos', stringifyGallery);
-});
 //cargar los guifos creados en la galería
 window.addEventListener('load', ()=>{
     //Parseo del json donde están los ids
-    arrayGallery = JSON.parse(localStorage.getItem('galeriaDeGuifos'))
-    //condición para que solo se carguen cuando haya más de un elemento en el array
-    if(arrayGallery.length > 0){
-        loadMisGuifos();
+    if(localStorage.getItem('galeriaDeGuifos')){
+        arrayGallery = JSON.parse(localStorage.getItem('galeriaDeGuifos'))
+        //condición para que solo se carguen cuando haya más de un elemento en el array
+        if(arrayGallery.length > 0){
+            loadMisGuifos();
+        };
     };
 });
