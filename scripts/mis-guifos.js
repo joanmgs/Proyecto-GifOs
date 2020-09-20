@@ -23,11 +23,14 @@ window.addEventListener('load', ()=>{
         // divButtonHistorial.classList.remove('day-see');
         sailorNightButon.click();
     };
-    //Hago stringify del array de los ids
-    arrayGallery = JSON.parse(localStorage.getItem('galeriaDeGuifos'))
-    //condición para que solo se carguen cuando haya más de un elemento en el array
-    if(arrayGallery.length > 0){
-        loadMisGuifos();
+    if(window.localStorage.galeriaDeGuifos){
+        //Hago stringify del array de los ids
+        arrayGallery = JSON.parse(localStorage.getItem('galeriaDeGuifos'))
+        //condición para que solo se carguen cuando haya más de un elemento en el array
+
+        if(arrayGallery.length > 0){
+            loadMisGuifos();
+        };
     };
 });
 //generador de cards

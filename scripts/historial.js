@@ -29,22 +29,18 @@ function historialDivBelow(inputTextValue){
     if(numbOfDivs.length < 5){
         storageHistorial.push(inputTextValue);
         divHistorial.prepend(divButtonHistorial);
-
-        //convierte en string el array de storageHistorial
-        const stringifyHistorial = JSON.stringify(storageHistorial);
-        //guarda en el localStorage el string
-        localStorage.setItem('historial',stringifyHistorial);
     }else{
         storageHistorial.shift();
         storageHistorial.push(inputTextValue);
         divHistorial.prepend(divButtonHistorial);
         numbOfDivs[4].remove();
-
-        //convierte en string el array de storageHistorial
-        const stringifyHistorial = JSON.stringify(storageHistorial);
-        //guarda en el localStorage el string
-        localStorage.setItem('historial',stringifyHistorial);
     };
+
+    //convierte en string el array de storageHistorial
+    const stringifyHistorial = JSON.stringify(storageHistorial);
+    //guarda en el localStorage el string
+    localStorage.setItem('historial',stringifyHistorial);
+
     //permite hacer click al botón de historial guardado para buscarlo nuevamente
     divButtonHistorial.addEventListener('click', () => {
         inputText.value = inputTextValue;
