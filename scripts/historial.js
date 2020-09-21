@@ -74,24 +74,26 @@ window.addEventListener('load', ()=>{
         // divButtonHistorial.classList.remove('day-see');
         sailorNightButon.click();
     };
-    //parsea el string, convirtiendolo en array nuevamente
-    storageHistorial = JSON.parse(localStorage.getItem('historial'));
-    //si la página se recargo y no hay nada, no se crea el historial nuevamente
-    if(storageHistorial.length >0){
-        for(let i = 0; i<storageHistorial.length; i++){
-            let divButtonHistorial = document.createElement('div');
-            divButtonHistorial.classList.add('button-historial');
-            let p = document.createElement('p');
-            divButtonHistorial.appendChild(p);
-            p.innerHTML = `#${storageHistorial[i]}`;
-            divHistorial.prepend(divButtonHistorial);
-            //permite hacer click al botón de historial guardado para buscarlo nuevamente
-            divButtonHistorial.addEventListener('click', () => {
-                inputText.value = storageHistorial[i];
-                window.scroll(0, topLocationTrending);
-                //true permite indicar que el evento ocurrió
-                searching(true);
-            });
+    if(window.localStorage.historial){
+        //parsea el string, convirtiendolo en array nuevamente
+        storageHistorial = JSON.parse(localStorage.getItem('historial'));
+        //si la página se recargo y no hay nada, no se crea el historial nuevamente
+        if(storageHistorial.length >0){
+            for(let i = 0; i<storageHistorial.length; i++){
+                let divButtonHistorial = document.createElement('div');
+                divButtonHistorial.classList.add('button-historial');
+                let p = document.createElement('p');
+                divButtonHistorial.appendChild(p);
+                p.innerHTML = `#${storageHistorial[i]}`;
+                divHistorial.prepend(divButtonHistorial);
+                //permite hacer click al botón de historial guardado para buscarlo nuevamente
+                divButtonHistorial.addEventListener('click', () => {
+                    inputText.value = storageHistorial[i];
+                    window.scroll(0, topLocationTrending);
+                    //true permite indicar que el evento ocurrió
+                    searching(true);
+                });
+            };
         };
     };
 });
