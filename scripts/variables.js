@@ -24,7 +24,7 @@ let trendHover = document.getElementsByClassName('trend-hover');
 
 let containerTrending = document.getElementById('container-trending');
 
-let topLocationTrending = 710; //ubicación Y de #trendings
+let topLocationTrending = 710; //ubicación eje Y de #trendings
 
 let nightTheme = false; //switch para indicar la activación del night Theme; se usa para aparecer u ocultar elementos al ingresar elementos en el searcher
 
@@ -33,7 +33,3 @@ let searchButtonActive = false;
 let storageHistorial = []; //array donde se guarda el historial
 
 let arrayGallery = []; //array donde se guardan los id de guifos para subirlos al localstorage
-
-// CreateElements
-
-// let figureInTrend = document.getElementById('figure-in-trend');

@@ -1,6 +1,5 @@
 //Mantiene el tema en los otros html
 window.addEventListener('load', ()=>{
-
     nightTheme = JSON.parse(localStorage.getItem('theme'));
 
     let dayBackground = document.getElementById('day-background');

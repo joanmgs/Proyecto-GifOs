@@ -10,7 +10,6 @@ function misGuifoscardGenerator(miGuifoUrl){
     //defino sus clases
     trendCardDiv.classList.add("trend-card");
     trendGIfImg.setAttribute('src',miGuifoUrl)
-    // trendGIfImg.id = `trend-mi-guifo-${numberOfCards+1}`;
 };
 //agrega un div a la galería con mi guifo
 async function fillMisGuifosGallery(miGuifoId){

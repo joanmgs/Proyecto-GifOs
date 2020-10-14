@@ -4,7 +4,6 @@ async function fillSuggestedGifCards(){
         let urlRandom = `https://api.giphy.com/v1/gifs/random?api_key=${APIKey}&rating=G`;
         let responseRandome = await fetch(urlRandom);
         let dataRandom = await responseRandome.json();
-
         //lleno p con el nombre del usuario que subió el gif como hashtag
         let nameSuggestGif = document.querySelector(`#suggest-hashtag${i+1}`); 
         nameSuggestGif.innerHTML = `#${dataRandom.data.username}`;
@@ -31,8 +30,8 @@ async function fillSuggestedGifCards(){
             //guardo el title obtenido en el html con el atributo data-title
             document.getElementsByClassName('see-more')[i].setAttribute('data-title', dataRandom.data.title);
         });
-    }
-}
+    };
+};
 fillSuggestedGifCards();
 //Función al hacer click en el botón Ver Más
 function verMas(){
@@ -109,15 +108,12 @@ async function trendCards(){
             const hashtag1 = tagData.data[1].name;
             const hashtag2 = tagData.data[2].name;
 
-            // pTagsHover.innerHTML = `#${hashtag0} #${hashtag1} #${hashtag2}`;
             tags[i].innerHTML = `#${hashtag0} #${hashtag1} #${hashtag2}`;
         }else{
             //llena el gif sin tag con las palabras #giphy #gifs
-            // pTagsHover.innerHTML = `#giphy #gifs`;
             tags[i].innerHTML = `#giphy #gifs`;
         };
     };
-
     showTags();
 };
 trendCards();
@@ -126,7 +122,7 @@ searchButton.addEventListener('click', (event) => {
     if(event.button == 0 && inputText.value != ''){
         window.scroll(0, topLocationTrending);
         searching();
-    }
+    };
 });
 //Funcionalidad de la barra de búsqueda al presionar enter/return
 inputText.addEventListener('keypress', (event) => {
@@ -183,14 +179,10 @@ async function searching(comeFromHistorial){
             const hashtag2 = dataRelatedTag.data[2].name;
 
             tags[i].innerHTML = `#${hashtag0} #${hashtag1} #${hashtag2}`;
-
-            //!setear los temas aquí.
-
         }else{
             tags[i].innerHTML = `#${inputText.value}`;
         };
     };
-
     showTags();
 };
 //Moseover sobre trend-card - Aparece y desaparece los tags y el cuadro opaco

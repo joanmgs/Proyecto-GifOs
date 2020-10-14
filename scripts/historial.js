@@ -51,10 +51,6 @@ function historialDivBelow(inputTextValue){
 };
 //Guarda el historial antes de la actualización de la página en el localStorage
 window.addEventListener('beforeunload', ()=>{
-    // //convierte en string el array de storageHistorial
-    // const stringifyHistorial = JSON.stringify(storageHistorial);
-    // //guarda en el localStorage el string
-    // localStorage.setItem('historial',stringifyHistorial);
     //guarda el theme que haya escogido el usuario
     const stringifyNightTheme = JSON.stringify(nightTheme);
     //lo guardo en el localStorage
@@ -66,12 +62,8 @@ window.addEventListener('load', ()=>{
     nightTheme = JSON.parse(localStorage.getItem('theme'));
     //condiciono para activar el evento que dejo el usuario guardado
     if(!nightTheme){
-        // divButtonHistorial.classList.add('day-see');
-        // divButtonHistorial.classList.remove('night-see');
         sailorDayButon.click();
     }else{
-        // divButtonHistorial.classList.add('night-see');
-        // divButtonHistorial.classList.remove('day-see');
         sailorNightButon.click();
     };
     if(window.localStorage.historial){

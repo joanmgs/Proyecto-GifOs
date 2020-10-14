@@ -34,7 +34,6 @@ async function getStreamAndRecord(constraints){
         stream = await navigator.mediaDevices.getUserMedia(constraints);
         
         recorderVideo.srcObject = stream;
-        // recorderVideo.play();
         //indico un mensaje antes del STOP
         captureButton.innerHTML = "Espera...";
         //Defino configuraciones del gif a grabar
@@ -83,32 +82,7 @@ async function stopAndPost(){
     //envíamos el gif creado a la siguiente sección para que sea posible verlo
     urlBlobPreview = URL.createObjectURL(blob);
     previewGif.setAttribute('src',urlBlobPreview);
-    // try{
-    //     let urlPost = `https://upload.giphy.com/v1/gifs?api_key=${APIKey}&username=Joangs`;
-    //     //en el método post, en el body, agrego el form
-    //     let responsePost = await fetch(urlPost, {
-    //         method: 'POST',
-    //         body: form
-    //     });
-    //     let dataPost = await responsePost.json();
-    //     //asigno la id del gif enviado a una variable
-    //     const dataPostId = dataPost.data.id;
-    //     console.log(dataPostId)
-    //     //desaparezco before-start-box y aparezco vista previa
-
-        // //!para hacerlo en otra funcion probablemente
-        // let urlGet = `https://api.giphy.com/v1/gifs/${dataPostId}?api_key=${APIKey}`;
-        // let responseGet = await fetch(urlGet);
-        // let dataGet = await responseGet.json();
-        // console.log(dataGet)
-    // }catch(fail){
-    //     streaming = false;
-    //     captureButton.innerHTML = "Don't work";
-    //     throw new Error(fail);
-    // };
 };
-
-
 //states - sections
 let comenzar = document.getElementById('comenzar');
 let mainCreateBox = document.getElementById('main-create-box');
@@ -147,23 +121,12 @@ repetirCaptura.addEventListener('click', ()=>{
         camera.setAttribute('src','./assets/camera_light.svg');
     }else{
         camera.setAttribute('src','./assets/camera.svg');
-    }
-    
-});
-//play al guifo ya grabado
-forwardArrow.addEventListener('click', ()=>{
-    //!repite el movimiento del guifo
+    };
 });
 //cambio de preview con subir guifo a uploading guifo
 subirGuifo.addEventListener('click', async ()=>{
     preview.style.display = "none";
     uploading.style.display = "block";
-    // //función de prueba para que aparezca página de carga
-    // //después aparece successCreateBox con la posibilidad de copiar link o descargar gif
-    // setTimeout(() => {
-    //     uploading.style.display = "none";
-    //     successCreateBox.style.display = "block";
-    // }, 5000);
     try{
         let urlPost = `https://upload.giphy.com/v1/gifs?api_key=${APIKey}&username=Joangs`;
         //en el método post, en el body, agrego el form
@@ -193,8 +156,6 @@ subirGuifo.addEventListener('click', async ()=>{
 cancelUpload.addEventListener('click', ()=>{
     uploading.style.display = "none";
     mainCreateBox.style.display = "block";
-    //!Falta prevenir el evento de subir el guifo
-    //aquí también se hace el cambio de uploading a success-create-box
 });
 //Descargar guifo
 downloadGuifo.addEventListener('click', ()=>{

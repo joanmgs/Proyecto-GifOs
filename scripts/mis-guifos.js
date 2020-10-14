@@ -4,10 +4,6 @@ window.addEventListener('beforeunload', ()=>{
     const stringifyNightTheme = JSON.stringify(nightTheme);
     //lo guardo en el localStorage
     localStorage.setItem('theme',stringifyNightTheme);
-    // //Mis guifos
-    // const stringifyGallery = JSON.stringify(arrayGallery);
-    // //guarda en el local storage los ids de los gifs creados
-    // localStorage.setItem('galeriaDeGuifos', stringifyGallery);
 });
 //cargar los guifos creados en la galería
 window.addEventListener('load', ()=>{
@@ -15,12 +11,8 @@ window.addEventListener('load', ()=>{
     nightTheme = JSON.parse(localStorage.getItem('theme'));
     //condiciono para activar el evento que dejo el usuario guardado
     if(!nightTheme){
-        // divButtonHistorial.classList.add('day-see');
-        // divButtonHistorial.classList.remove('night-see');
         sailorDayButon.click();
     }else{
-        // divButtonHistorial.classList.add('night-see');
-        // divButtonHistorial.classList.remove('day-see');
         sailorNightButon.click();
     };
     if(window.localStorage.galeriaDeGuifos){
